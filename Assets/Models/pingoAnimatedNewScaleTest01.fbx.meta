@@ -1,0 +1,242 @@
+fileFormatVersion: 2
+guid: d4f28dcb54081dc4896a9e6fb4a12110
+timeCreated: 1491598761
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Armature
+    100002: Bone
+    100004: Bone.001
+    100006: Bone.002
+    100008: Bone.003
+    100010: Bone.003_end
+    100012: Bone.004
+    100014: Bone.005
+    100016: Bone.006
+    100018: Bone.007
+    100020: Bone.007_end
+    100022: Bone.008
+    100024: Bone.009
+    100026: Bone.010
+    100028: Bone.011
+    100030: Bone.011_end
+    100032: Bone.012
+    100034: Bone.013
+    100036: Bone.014
+    100038: Bone.015
+    100040: Bone.015_end
+    100042: Bone.016
+    100044: Bone.017
+    100046: Bone.018
+    100048: Bone.019
+    100050: Bone.019_end
+    100052: Bone.020
+    100054: Bone.021
+    100056: Bone.022
+    100058: Bone.023
+    100060: Bone.023_end
+    100062: Bone.024
+    100064: Bone.025
+    100066: Bone.026
+    100068: Bone.027
+    100070: Bone.027_end
+    100072: Bone.028
+    100074: Bone.029
+    100076: Bone.030
+    100078: Bone.031
+    100080: Bone.031_end
+    100082: Bone.032
+    100084: Bone.033
+    100086: Bone.034
+    100088: Bone.035
+    100090: Bone.035_end
+    100092: Bone.036
+    100094: Bone.037
+    100096: Bone.038
+    100098: Bone.039
+    100100: Bone.039_end
+    100102: Bone.040
+    100104: Bone.041
+    100106: Bone.042
+    100108: Bone.043
+    100110: Bone.043_end
+    100112: Bone.044
+    100114: Bone.045
+    100116: Bone.046
+    100118: Bone.047
+    100120: Bone.047_end
+    100122: Camera
+    100124: Cube
+    100126: Empty
+    100128: Lamp
+    100130: Pingo Surfaces closed
+    100132: Pingo Surfaces Open
+    100134: Pingo Surfaces Open.001
+    100136: //RootNode
+    100138: Plane
+    100140: Sphere
+    400000: Armature
+    400002: Bone
+    400004: Bone.001
+    400006: Bone.002
+    400008: Bone.003
+    400010: Bone.003_end
+    400012: Bone.004
+    400014: Bone.005
+    400016: Bone.006
+    400018: Bone.007
+    400020: Bone.007_end
+    400022: Bone.008
+    400024: Bone.009
+    400026: Bone.010
+    400028: Bone.011
+    400030: Bone.011_end
+    400032: Bone.012
+    400034: Bone.013
+    400036: Bone.014
+    400038: Bone.015
+    400040: Bone.015_end
+    400042: Bone.016
+    400044: Bone.017
+    400046: Bone.018
+    400048: Bone.019
+    400050: Bone.019_end
+    400052: Bone.020
+    400054: Bone.021
+    400056: Bone.022
+    400058: Bone.023
+    400060: Bone.023_end
+    400062: Bone.024
+    400064: Bone.025
+    400066: Bone.026
+    400068: Bone.027
+    400070: Bone.027_end
+    400072: Bone.028
+    400074: Bone.029
+    400076: Bone.030
+    400078: Bone.031
+    400080: Bone.031_end
+    400082: Bone.032
+    400084: Bone.033
+    400086: Bone.034
+    400088: Bone.035
+    400090: Bone.035_end
+    400092: Bone.036
+    400094: Bone.037
+    400096: Bone.038
+    400098: Bone.039
+    400100: Bone.039_end
+    400102: Bone.040
+    400104: Bone.041
+    400106: Bone.042
+    400108: Bone.043
+    400110: Bone.043_end
+    400112: Bone.044
+    400114: Bone.045
+    400116: Bone.046
+    400118: Bone.047
+    400120: Bone.047_end
+    400122: Camera
+    400124: Cube
+    400126: Empty
+    400128: Lamp
+    400130: Pingo Surfaces closed
+    400132: Pingo Surfaces Open
+    400134: Pingo Surfaces Open.001
+    400136: //RootNode
+    400138: Plane
+    400140: Sphere
+    2300000: Cube
+    2300002: Pingo Surfaces closed
+    2300004: Pingo Surfaces Open
+    2300006: Plane
+    2300008: Sphere
+    2300010: //RootNode
+    3300000: Cube
+    3300002: Pingo Surfaces closed
+    3300004: Pingo Surfaces Open
+    3300006: Plane
+    3300008: Sphere
+    3300010: //RootNode
+    4300000: Sphere
+    4300002: Plane
+    4300004: Cube
+    4300006: Pingo Surfaces Open
+    4300008: Pingo Surfaces Open.001
+    4300010: Pingo Surfaces closed
+    7400000: Empty|EmptyAction
+    7400002: Armature|Breath01
+    7400004: Armature|EmptyAction
+    9500000: //RootNode
+    13700000: Pingo Surfaces Open.001
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
