@@ -25,7 +25,7 @@ public class GlobalFlock : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		if (Random.Range (0, 10000) < 50) {
+		if (Random.Range (0, 1000) < 5) {
 
 			goalPos = new Vector3(Random.Range(-tankSize, tankSize), Random.Range(-0,tankSize), Random.Range(-tankSize,tankSize));
 			goalPrefab.transform.position = goalPos;
