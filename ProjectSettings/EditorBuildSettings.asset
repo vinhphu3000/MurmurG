@@ -24,6 +24,9 @@ EditorBuildSettings:
     path: Assets/Plugins/Catlike Coding/NumberFlow/Examples/Gallery/Gallery.unity
     guid: 775c9e6493a1e4644adefda2fe957813
   - enabled: 1
+    path: Assets/Plugins/Catlike Coding/NumberFlow/Examples/Terrain/Terrain.unity
+    guid: e12390c73f4624cf49d154d16bc13552
+  - enabled: 1
     path: Assets/Scenes/Murmur02.unity
     guid: 7068aa46111926244bec7538ea7f0ed8
   - enabled: 1

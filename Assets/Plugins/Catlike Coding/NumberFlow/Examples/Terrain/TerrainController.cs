@@ -18,7 +18,7 @@ namespace CatlikeCoding.NumberFlow.Examples {
 		
 		private Value morphValue, octavesValue, persistenceValue, secondary;
 		
-		private float morphSpeed;
+		private float morphSpeed = .1f;
 		
 		private Texture2D terrainTexture;
 		

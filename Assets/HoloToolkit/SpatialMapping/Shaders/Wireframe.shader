@@ -110,7 +110,7 @@ Shader "HoloToolkit/Wireframe"
 
                 // Fade out the alpha but not the color so we don't get any weird halo effects from
                 // a fade to a different color.
-                float4 color = I * _WireColor + (1 - I) * _BaseColor;
+				float4 color = I * _WireColor + (1 - I) *_BaseColor;
                 color.a = I;
                 return color;
             }

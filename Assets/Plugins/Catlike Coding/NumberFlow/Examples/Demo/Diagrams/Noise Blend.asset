@@ -240,7 +240,7 @@ MonoBehaviour:
         m_NumAlphaKeys: 2
       Pixels:
         texture: {fileID: 0}
-  - position: {x: 191, y: 144}
+  - position: {x: 172, y: 190}
     functionId: CatlikeCoding.NumberFlow.Functions.Floats.PerlinTurbulenceTiledXY
     argumentIndices: 00000000ffffffffffffffffffffffffffffffffffffffff
     fixedValues:
@@ -508,7 +508,7 @@ MonoBehaviour:
         m_NumAlphaKeys: 2
       Pixels:
         texture: {fileID: 0}
-  - position: {x: 142, y: 276}
+  - position: {x: 77, y: 328}
     functionId: CatlikeCoding.NumberFlow.Functions.Floats.PerlinNoiseTiledXY
     argumentIndices: 00000000ffffffffffffffffffffffffffffffffffffffff
     fixedValues:
@@ -734,7 +734,7 @@ MonoBehaviour:
         texture: {fileID: 0}
     - Bool: 0
       Color: {r: 0, g: 0, b: 0, a: 0}
-      Float: 0.35
+      Float: 0.25
       Int: 2
       String: 
       Vector2: {x: 0, y: 0}
@@ -776,7 +776,7 @@ MonoBehaviour:
         m_NumAlphaKeys: 2
       Pixels:
         texture: {fileID: 0}
-  - position: {x: 403, y: 336}
+  - position: {x: 265, y: 343}
     functionId: CatlikeCoding.NumberFlow.Functions.Colors.Gradient
     argumentIndices: ffffffff03000000
     fixedValues:
@@ -1102,7 +1102,7 @@ MonoBehaviour:
         texture: {fileID: 0}
     - Bool: 0
       Color: {r: 0, g: 0, b: 0, a: 0}
-      Float: 0.05
+      Float: 0.02
       Int: 0
       String: 
       Vector2: {x: 0, y: 0}
@@ -1464,7 +1464,7 @@ MonoBehaviour:
         m_NumAlphaKeys: 2
       Pixels:
         texture: {fileID: 0}
-  - position: {x: 329, y: 20}
+  - position: {x: 313, y: 20}
     functionId: CatlikeCoding.NumberFlow.Functions.Input.FloatInput
     argumentIndices: ffffffffffffffff
     fixedValues:

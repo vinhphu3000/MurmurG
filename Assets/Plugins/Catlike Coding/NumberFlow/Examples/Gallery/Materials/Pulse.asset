@@ -1090,7 +1090,7 @@ MonoBehaviour:
   exportAnimateTo: 1
   tilePreviewHorizontally: 1
   tilePreviewVertically: 1
-  animatePreview: 0
+  animatePreview: 1
   isCubemap: 0
   derivativeScale: 1
   previewCubemapDirection: 4

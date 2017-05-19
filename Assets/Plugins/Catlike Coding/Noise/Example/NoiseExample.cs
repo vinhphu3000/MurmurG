@@ -92,11 +92,14 @@ public class NoiseExample : MonoBehaviour {
 	}
 
 	public void SetZOffset (float zOffset) {
-		this.zOffset = zOffset;
+        //this.zOffset = zOffset;
+        zOffset = Time.deltaTime;
 		GenerateNoise();
 	}
 
 	void Update () {
+
+       // zOffset = Time.deltaTime;
 		if (needsUpdate) {
 			GenerateNoise();
 			needsUpdate = false;

@@ -17,13 +17,13 @@ public class HeadTracer : MonoBehaviour {
         {
             time += Time.deltaTime;
 
-            if (time >= .2)
+            if (time >= .05)
             {
 
 
                 time = 0;
                 GameObject t = (GameObject)Instantiate(tracer, transform.position, Quaternion.identity);
-                Destroy(t, 3);
+                Destroy(t, 5);
             }
         }
        
