@@ -72,7 +72,7 @@ public class AudioPeer : MonoBehaviour {
     {
         int count = 0;
 
-        for(int i = 0; i < 0; i++)
+        for(int i = 0; i < 8; i++)
         {
             float average = 0;
             int sampleCount = (int)Mathf.Pow(2, i) * 2;

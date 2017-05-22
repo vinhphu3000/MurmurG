@@ -24,9 +24,9 @@ public class ParamCube : MonoBehaviour {
         }
         if (!_useBuffer)
         {
-
+                
             transform.localScale = new Vector3(transform.localScale.x, (AudioPeer._audioBand[_band] * _scaleMultiplier) + _startScale, transform.localScale.z);
-            Color _color = new Color(AudioPeer._audioBandBuffer[_band], AudioPeer._audioBandBuffer[_band], AudioPeer._audioBandBuffer[_band]);
+            Color _color = new Color(AudioPeer._audioBand[_band], AudioPeer._audioBand[_band], AudioPeer._audioBand[_band]);
             _material.SetColor("_EmissionColor", _color);
         }
     }

@@ -47,6 +47,7 @@ public class NoiseExample : MonoBehaviour {
 
 	void Start () {
 		rotater = transform;
+        zOffset = Time.deltaTime;
 		GenerateMesh();
 		GenerateNoise();
 		UpdateNoiseLabel();
@@ -92,22 +93,32 @@ public class NoiseExample : MonoBehaviour {
 	}
 
 	public void SetZOffset (float zOffset) {
-        //this.zOffset = zOffset;
-        zOffset = Time.deltaTime;
+        this.zOffset = zOffset;
+        
 		GenerateNoise();
 	}
+   // float z = 0f;
+  //  float zSpeed = .01f;
 
-	void Update () {
+    void Update () {
 
-       // zOffset = Time.deltaTime;
-		if (needsUpdate) {
-			GenerateNoise();
-			needsUpdate = false;
-		}
+     //   z += zSpeed;
+
+     //   if (z > 1f || z < 0f) zSpeed = -zSpeed;
+       
+        
+      
+        zOffset = Time.time * .01f;
+        Debug.Log("Time: " + Time.time);
+        //Debug.Log("zOffset " + zOffset + "Z Value " + z);
+            GenerateNoise();
+		//	needsUpdate = false;
+	//	}
 
 		if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift)) {
 			if (Input.GetKey(KeyCode.RightArrow)) {
 				sunRotater.Rotate(0f, -45f * Time.deltaTime, 0f);
+
 			}
 			if (Input.GetKey(KeyCode.LeftArrow)) {
 				sunRotater.Rotate(0f, 45f * Time.deltaTime, 0f);
@@ -138,8 +149,8 @@ public class NoiseExample : MonoBehaviour {
 		case 2: GenerateValue(); break;
 		case 3: GenerateVoronoi(); break;
 		}
-
-		mesh.vertices = vertices;
+        
+        mesh.vertices = vertices;
 		mesh.RecalculateNormals();
 	}
 

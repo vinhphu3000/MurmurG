@@ -77,6 +77,7 @@ Shader "Noise/Cell01"
 		
 			//	TODO: 	these constants need tweaked to find the best possible noise.
 			//			probably requires some kind of brute force computational searching or something....
+			
 			const float2 OFFSET = float2( 50.0, 161.0 );
 			const float DOMAIN = 69.0;
 			const float4 SOMELARGEFLOATS = float4( 635.298681, 682.357502, 668.926525, 588.255119 );
@@ -216,7 +217,7 @@ Shader "Noise/Cell01"
 		CGPROGRAM
 		#pragma surface surf Lambert vertex:vert
 		#pragma glsl
-		#pragma target 3.0
+		#pragma target 5.0
 		
 		fixed _Octaves;
 		float _Frequency;
