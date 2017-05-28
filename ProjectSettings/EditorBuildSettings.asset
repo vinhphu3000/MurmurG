@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 0
-    path: Assets/HoloToolkit/Sharing/Tests/Scenes/SharingTest.unity
+    path: Assets/HoloToolkit-Tests/Sharing/Scenes/SharingTest.unity
     guid: 569d545af7438ca47acc54671fc57d2e
   - enabled: 0
     path: Assets/Scenes/Murmur01.unity
@@ -18,7 +18,7 @@ EditorBuildSettings:
     path: Assets/HoloToolkit-Examples/SavingSpatialMeshes/SaveSpatialUnderstanding.unity
     guid: 8d26b343ca0a41443aeaaf0796b6703d
   - enabled: 0
-    path: Assets/HoloToolkit/Sharing/Tests/Scenes/RoomAndAnchorTest.unity
+    path: Assets/HoloToolkit-Tests/Sharing/Scenes/RoomAndAnchorTest.unity
     guid: ce35045e930c3b442881305966b17fee
   - enabled: 0
     path: Assets/Plugins/Catlike Coding/NumberFlow/Examples/Gallery/Gallery.unity
