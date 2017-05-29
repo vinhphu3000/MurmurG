@@ -20,7 +20,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Plugins/Catlike Coding/NumberFlow/Examples/Terrain/Terrain.unity
     guid: e12390c73f4624cf49d154d16bc13552
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Murmur02.unity
     guid: 7068aa46111926244bec7538ea7f0ed8
   - enabled: 0
@@ -29,39 +29,39 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/MiddleFork.unity
     guid: 0ebb1b55725235f4b9a2a78e5d45e6ed
-  - enabled: 1
+  - enabled: 0
     path: Assets/HoloToolkit-Examples/InteractiveElements/Scenes/GestureInteractiveExample.unity
     guid: 129aec1ffadcd134791d142340881afb
-  - enabled: 1
+  - enabled: 0
     path: Assets/HoloToolkit-Examples/InteractiveElements/Scenes/InteractiveButtonComponents.unity
     guid: b20ddbd2fc80f1e4eae9a3d9f6fffecb
-  - enabled: 1
+  - enabled: 0
     path: Assets/HoloToolkit-Examples/InteractiveElements/Scenes/InteractiveExample.unity
     guid: 9800082610e23d749aa87947090ac967
-  - enabled: 1
+  - enabled: 0
     path: Assets/HoloToolkit-Examples/InteractiveElements/Scenes/SliderSamples.unity
     guid: 24e56719c50827c488962b4249d4a70d
-  - enabled: 1
+  - enabled: 0
     path: Assets/HoloToolkit-Examples/Prototyping/Scenes/ClickThroughExample.unity
     guid: 24e0df9a7b63a604eace8f882d39e98b
-  - enabled: 1
+  - enabled: 0
     path: Assets/HoloToolkit-Examples/Prototyping/Scenes/ColorCycleSwitcher.unity
     guid: c5d76c322e95d5d45b021d9e3d78fafd
-  - enabled: 1
+  - enabled: 0
     path: Assets/HoloToolkit-Examples/Prototyping/Scenes/CycleArray.unity
     guid: 842aaaa8d5f4e0a44bf6b487f95b2f15
-  - enabled: 1
+  - enabled: 0
     path: Assets/HoloToolkit-Examples/Prototyping/Scenes/PlanelLayout.unity
     guid: 1ad7ea4cb1f510f42959e6c3a96fcd16
-  - enabled: 1
+  - enabled: 0
     path: Assets/HoloToolkit-Examples/Prototyping/Scenes/PositionAnObject.unity
     guid: b0ae689c40c1c5f4799a829149d9270d
-  - enabled: 1
+  - enabled: 0
     path: Assets/HoloToolkit-Examples/Prototyping/Scenes/ScaleObjectByDistance.unity
     guid: 356db9551bf75544a818c0f74406188e
-  - enabled: 1
+  - enabled: 0
     path: Assets/HoloToolkit-Examples/SavingSpatialMeshes/SaveSpatialMapping.unity
     guid: 537fc086ebd88124ba24a90db8110d2f
-  - enabled: 1
+  - enabled: 0
     path: Assets/HoloToolkit-Examples/SavingSpatialMeshes/SaveSpatialUnderstanding.unity
     guid: 8d26b343ca0a41443aeaaf0796b6703d

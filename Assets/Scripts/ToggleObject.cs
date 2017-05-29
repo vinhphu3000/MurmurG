@@ -12,18 +12,23 @@ public class ToggleObject : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(Toggle)
-        {
-            ToggleTarget.gameObject.SetActive(true);
-        }
-        else
-        {
-            ToggleTarget.gameObject.SetActive(false);
-        }
+        
+
+        
 	}
 
     public void ToggleMe()
     {
         Toggle = !Toggle;
+        if (Toggle)
+        {
+            ToggleTarget.gameObject.SetActive(true);
+             Debug.Log("Toggle Target is true");
+        }
+        else
+        {
+            ToggleTarget.gameObject.SetActive(false);
+              Debug.Log("Toggle Target is false");
+        }
     }
 }
