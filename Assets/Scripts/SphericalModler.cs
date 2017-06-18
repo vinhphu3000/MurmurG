@@ -127,8 +127,8 @@ public class SphericalModler : MonoBehaviour
 	// waves affecting the surface at once might take some careful thinking...
 	float GetRadius(float phi, float theta, float time = 0)
 	{  
-		return xMod1YOffset + xMod1Scale*Mathf.Sin(xMod1TimeResponse*time + theta*xMod1Period + xMod1PhaseOffset) +
-			yMod1YOffset + yMod1Scale*Mathf.Sin(yMod1TimeResponse*time + phi*yMod1Period + yMod1PhaseOffset);
+		return xMod1YOffset + xMod1Scale*Mathf.Sin(xMod1TimeResponse*time + theta*xMod1Period*time*.1f + xMod1PhaseOffset*time) +
+			yMod1YOffset + yMod1Scale*Mathf.Sin(yMod1TimeResponse*time + phi*yMod1Period*time*.1f + yMod1PhaseOffset*time);
 	}
 
 	//show a representation in the editor window
