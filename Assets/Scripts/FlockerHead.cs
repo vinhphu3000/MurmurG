@@ -51,7 +51,7 @@ public class FlockerHead : MonoBehaviour
         transform.Translate(0, 0, Time.deltaTime * speed);
     }
 
-    void ApplyRules()
+   public void ApplyRules()
     {
         GameObject[] gos;
         gos = FollowFlock.allFlock;
