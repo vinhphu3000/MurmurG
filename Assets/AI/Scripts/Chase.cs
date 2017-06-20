@@ -6,17 +6,19 @@ public class Chase : MonoBehaviour {
 
     public Transform player;
     public Transform head;
+    public GameObject flockPrefab;
     Animator anim;
-    bool pursuing = false;
-    bool patrol = true;
-    // Use this for initialization
 
-   // string state = "patrol";
+    string state = "patrol";
     public GameObject[] waypoints;
     int currentWP = 0;
     public float rotSpeed = 0.2f;
    public float speed = 1.5f;
-    float accuracyWP = 0.1f;
+    public float npcViewRange;
+    public float npcViewAngle;
+    public float npcEngageMagnitude;
+
+    public float accuracyWP = 5.0f;
 
 	void Start () {
         anim = GetComponent<Animator>();
@@ -29,11 +31,12 @@ public class Chase : MonoBehaviour {
         direction.y = 0;
         float angle = Vector3.Angle(direction, head.up);
 
-        if(patrol && waypoints.Length > 0)
+        if( state == "patrol" && waypoints.Length > 0)
         {
             anim.SetBool("isIdle", false);
             anim.SetBool("isWalking", true);
-
+            player.GetComponent<Renderer>().material.color = Color.green;
+            flockPrefab.GetComponent<Renderer>().sharedMaterial.color = Color.green;
             if(Vector3.Distance(waypoints[currentWP].transform.position, transform.position) < accuracyWP)
             {
 
@@ -52,23 +55,21 @@ public class Chase : MonoBehaviour {
             this.transform.Translate(0, 0, Time.deltaTime * speed);
         }
 
-        if (Vector3.Distance(player.position, this.transform.position) < 10 && angle < 30 || pursuing) //state == "pursuing")
+        if (Vector3.Distance(player.position, this.transform.position) < npcViewRange && (angle < npcViewAngle || state == "pursuing")) //state == "pursuing")
 
         {
-            // state = "pursuing";
-           // patrol = false;
-            pursuing = true;
-            Debug.Log("patrol" + patrol + "pursuing" + pursuing);
-           // Vector3 direction = player.position - this.transform.position;
-            //direction.y = 0;
+             state = "pursuing";
+            player.GetComponent<Renderer>().material.color = Color.yellow;
+            flockPrefab.GetComponent<Renderer>().sharedMaterial.color = Color.yellow;
+        
             this.transform.rotation 
                 = Quaternion.Slerp(this.transform.rotation,
                 Quaternion.LookRotation(direction), rotSpeed * Time.deltaTime);
 
             anim.SetBool("isIdle", false);
-            if(direction.magnitude > 5)
+            if(direction.magnitude > npcEngageMagnitude)
             {
-                this.transform.Translate(0, 0, 0.05f);
+                this.transform.Translate(0, 0, Time.deltaTime * speed);
                 anim.SetBool("isWalking", true);
                 anim.SetBool("isAttacking", false);
             }
@@ -76,15 +77,17 @@ public class Chase : MonoBehaviour {
             {
                 anim.SetBool("isAttacking", true);
                 anim.SetBool("isWalking", false);
+                player.GetComponent<Renderer>().material.color = Color.red;
+                flockPrefab.GetComponent<Renderer>().sharedMaterial.color = Color.red;
             }
         }
         else
         {
-            anim.SetBool("isIdle", true);
+         //   anim.SetBool("isIdle", true);
             anim.SetBool("isWalking", true);
             anim.SetBool("isAttacking", false);
-            // state = "patrol";
-            pursuing = false;
+             state = "patrol";
+          //  pursuing = false;
            // patrol = true;
 
         //    Debug.Log("pursuing" + pursuing + "patrol" + patrol);
