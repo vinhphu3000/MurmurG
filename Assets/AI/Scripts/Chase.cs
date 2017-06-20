@@ -13,7 +13,7 @@ public class Chase : MonoBehaviour {
     public GameObject[] waypoints;
     int currentWP = 0;
     public float rotSpeed = 0.2f;
-   public float speed = 1.5f;
+    public float speed = 1.5f;
     public float npcViewRange;
     public float npcViewAngle;
     public float npcEngageMagnitude;
@@ -35,7 +35,7 @@ public class Chase : MonoBehaviour {
         {
             anim.SetBool("isIdle", false);
             anim.SetBool("isWalking", true);
-            player.GetComponent<Renderer>().material.color = Color.green;
+           // player.GetComponent<Renderer>().material.color = Color.green;
             flockPrefab.GetComponent<Renderer>().sharedMaterial.color = Color.green;
             if(Vector3.Distance(waypoints[currentWP].transform.position, transform.position) < accuracyWP)
             {
@@ -59,7 +59,7 @@ public class Chase : MonoBehaviour {
 
         {
              state = "pursuing";
-            player.GetComponent<Renderer>().material.color = Color.yellow;
+           // player.GetComponent<Renderer>().material.color = Color.yellow;
             flockPrefab.GetComponent<Renderer>().sharedMaterial.color = Color.yellow;
         
             this.transform.rotation 
@@ -77,7 +77,7 @@ public class Chase : MonoBehaviour {
             {
                 anim.SetBool("isAttacking", true);
                 anim.SetBool("isWalking", false);
-                player.GetComponent<Renderer>().material.color = Color.red;
+        //        player.GetComponent<Renderer>().material.color = Color.red;
                 flockPrefab.GetComponent<Renderer>().sharedMaterial.color = Color.red;
             }
         }
@@ -87,10 +87,6 @@ public class Chase : MonoBehaviour {
             anim.SetBool("isWalking", true);
             anim.SetBool("isAttacking", false);
              state = "patrol";
-          //  pursuing = false;
-           // patrol = true;
-
-        //    Debug.Log("pursuing" + pursuing + "patrol" + patrol);
         }
 	}
 }
