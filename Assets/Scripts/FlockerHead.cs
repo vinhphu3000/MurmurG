@@ -11,7 +11,7 @@ public class FlockerHead : MonoBehaviour
     public float rotationSpeed = 4.0f;
     Vector3 averageHeading;
     Vector3 averagePosition;
-    public float neighborDistance = 2.0f;
+    public float neighborDistance = 1.0f;
 
     bool turning = false;
     // Use this for initialization
@@ -49,6 +49,13 @@ public class FlockerHead : MonoBehaviour
                 ApplyRules();
         }
         transform.Translate(0, 0, Time.deltaTime * speed);
+    }
+
+    public void changeMaterial()
+    {
+        this.gameObject.GetComponent<Renderer>().sharedMaterial.color = Color.red;
+        Debug.Log("Change Material has been triggered to Red");
+
     }
 
    public void ApplyRules()

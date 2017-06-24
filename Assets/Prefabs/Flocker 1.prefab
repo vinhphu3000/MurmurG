@@ -37,7 +37,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1482643832869528}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0.048861332, y: -0.9234056, z: 0.12553927, w: 0.35940862}
   m_LocalPosition: {x: 11.176728, y: 2.530135, z: 7.1783676}
   m_LocalScale: {x: 0.1, y: 0.05, z: 0.2}
   m_Children: []
@@ -102,7 +102,7 @@ TrailRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1482643832869528}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_MotionVectors: 1
@@ -196,6 +196,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7649f7c9cecac1c48a72e49c3b5948ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.5
+  speed: 2
   rotationSpeed: 4
   neighborDistance: 3

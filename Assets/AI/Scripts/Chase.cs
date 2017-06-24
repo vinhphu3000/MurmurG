@@ -78,8 +78,8 @@ public class Chase : MonoBehaviour {
                 anim.SetBool("isAttacking", true);
                 anim.SetBool("isWalking", false);
         //        player.GetComponent<Renderer>().material.color = Color.red;
-                flockPrefab.GetComponent<Renderer>().sharedMaterial.color = Color.red;
-                flockPrefab.GetComponent<FlockerHead>().ApplyRules();
+            //    flockPrefab.GetComponent<Renderer>().sharedMaterial.color = Color.red;
+                flockPrefab.GetComponent<FlockerHead>().changeMaterial();
             }
         }
         else

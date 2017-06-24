@@ -7,7 +7,7 @@ public class FollowFlock : MonoBehaviour
 
     public GameObject flockPrefab;
     public GameObject goalPrefab;
-    public static int tankSize = 12;
+    public static int tankSize = 5;
 
     public static int numFlock = 20;
     public static GameObject[] allFlock = new GameObject[numFlock];

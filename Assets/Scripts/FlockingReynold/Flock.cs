@@ -8,7 +8,7 @@ using System.Collections.Generic;
 
 public class Flock : MonoBehaviour 
 {
-	internal FlockController controller;
+	internal FlockController2 controller;
 
     void Update()
     {
