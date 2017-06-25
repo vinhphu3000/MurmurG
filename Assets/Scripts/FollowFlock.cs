@@ -8,6 +8,7 @@ public class FollowFlock : MonoBehaviour
     public GameObject flockPrefab;
     public GameObject goalPrefab;
     public static int tankSize = 5;
+    public bool attack = true;
 
     public static int numFlock = 20;
     public static GameObject[] allFlock = new GameObject[numFlock];
@@ -34,9 +35,26 @@ public class FollowFlock : MonoBehaviour
 
         //      goalPos = new Vector3(Random.Range(-tankSize, tankSize), Random.Range(-0, tankSize), Random.Range(-tankSize, tankSize));
         //       goalPrefab.transform.position = goalPos;
-        goalPos = goalPrefab.transform.position;
-     //   }
+        if (attack) goalPos = goalPrefab.transform.position;
+        //
+        //else RandomGoal();
+
+        else
+        {
+            if (Random.Range(0, 10000) < 50)
+            {
+                goalPos = new Vector3(Random.Range(-tankSize, tankSize), Random.Range(-0, tankSize), Random.Range(-tankSize, tankSize));
+                goalPrefab.transform.position = goalPos;
+            }
+        }
+        //   }
 
 
+    }
+
+    void RandomGoal()
+    {
+        goalPos = new Vector3(Random.Range(-tankSize, tankSize), Random.Range(-0, tankSize), Random.Range(-tankSize, tankSize));
+        goalPrefab.transform.position = goalPos;
     }
 }

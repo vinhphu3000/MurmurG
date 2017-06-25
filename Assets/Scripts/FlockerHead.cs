@@ -12,7 +12,7 @@ public class FlockerHead : MonoBehaviour
     Vector3 averageHeading;
     Vector3 averagePosition;
     public float neighborDistance = 1.0f;
-
+    public bool attack = false;
     bool turning = false;
     // Use this for initialization
     void Start()
@@ -43,7 +43,7 @@ public class FlockerHead : MonoBehaviour
         else
         {
 
-
+            if (attack) ApplyRules();
 
             if (Random.Range(0, 5) < 1)
                 ApplyRules();

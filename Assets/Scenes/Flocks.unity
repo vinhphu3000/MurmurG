@@ -4098,6 +4098,7 @@ MonoBehaviour:
   head: {fileID: 1606265919}
   flockPrefab: {fileID: 1482643832869528, guid: 483857ca66c810742b89d3cc04343b4d,
     type: 2}
+  flockManager: {fileID: 1737952626}
   waypoints:
   - {fileID: 875835980}
   - {fileID: 1413138938}
@@ -7756,6 +7757,7 @@ MonoBehaviour:
   flockPrefab: {fileID: 1482643832869528, guid: 483857ca66c810742b89d3cc04343b4d,
     type: 2}
   goalPrefab: {fileID: 984475321}
+  attack: 1
 --- !u!102 &1737972342 stripped
 TextMesh:
   m_PrefabParentObject: {fileID: 102214044351826462, guid: a8b892e5dd7377442a7006e1384437c8,
