@@ -35,12 +35,26 @@ public class FollowFlock : MonoBehaviour
 
         //      goalPos = new Vector3(Random.Range(-tankSize, tankSize), Random.Range(-0, tankSize), Random.Range(-tankSize, tankSize));
         //       goalPrefab.transform.position = goalPos;
-        if (attack) goalPos = goalPrefab.transform.position;
+        if (attack)
+        {
+            goalPos = goalPrefab.transform.position;
+            for (int i = 0; i < numFlock; i++)
+            {
+              //  Vector3 pos = new Vector3(Random.Range(-tankSize, tankSize), Random.Range(0, tankSize), Random.Range(-tankSize, tankSize));
+                allFlock[i].GetComponent<FlockerHead>().attack = true;
+            }
+        }
         //
         //else RandomGoal();
 
         else
         {
+            
+            for (int i = 0; i < numFlock; i++)
+            {
+                //  Vector3 pos = new Vector3(Random.Range(-tankSize, tankSize), Random.Range(0, tankSize), Random.Range(-tankSize, tankSize));
+                allFlock[i].GetComponent<FlockerHead>().attack = false;
+            }
             if (Random.Range(0, 10000) < 50)
             {
                 goalPos = new Vector3(Random.Range(-tankSize, tankSize), Random.Range(-0, tankSize), Random.Range(-tankSize, tankSize));

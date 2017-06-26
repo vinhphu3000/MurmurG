@@ -39,7 +39,7 @@ public class Chase : MonoBehaviour {
            // player.GetComponent<Renderer>().material.color = Color.green;
             flockPrefab.GetComponent<Renderer>().sharedMaterial.color = Color.green;
             flockManager.GetComponent<FollowFlock>().attack = false;
-            flockPrefab.GetComponent<FlockerHead>().attack = false;
+          //  flockPrefab.GetComponent<FlockerHead>().attack = false;
 
             //  if(Vector3.Distance(waypoints[currentWP].transform.position, transform.position) < accuracyWP)
             //   {
@@ -66,6 +66,8 @@ public class Chase : MonoBehaviour {
            // player.GetComponent<Renderer>().material.color = Color.yellow;
             flockPrefab.GetComponent<Renderer>().sharedMaterial.color = Color.yellow;
             flockManager.GetComponent<FollowFlock>().attack = true;
+          //  flockPrefab.GetComponent<FlockerHead>().attack = true;
+
 
             this.transform.rotation 
                 = Quaternion.Slerp(this.transform.rotation,
@@ -85,7 +87,7 @@ public class Chase : MonoBehaviour {
         //        player.GetComponent<Renderer>().material.color = Color.red;
             //    flockPrefab.GetComponent<Renderer>().sharedMaterial.color = Color.red;
                 flockPrefab.GetComponent<FlockerHead>().changeMaterial();
-                flockPrefab.GetComponent<FlockerHead>().attack = true;
+            //    flockPrefab.GetComponent<FlockerHead>().attack = true;
             }
         }
         else
