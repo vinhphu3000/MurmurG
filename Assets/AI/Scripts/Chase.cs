@@ -29,7 +29,7 @@ public class Chase : MonoBehaviour {
 	void Update () {
 
         Vector3 direction = player.position - this.transform.position;
-        direction.y = 0;
+       // direction.y = 0;
         float angle = Vector3.Angle(direction, head.up);
 
         if( state == "patrol" && waypoints.Length > 0)
@@ -76,7 +76,7 @@ public class Chase : MonoBehaviour {
             anim.SetBool("isIdle", false);
             if(direction.magnitude > npcEngageMagnitude)
             {
-                this.transform.Translate(0, 0, Time.deltaTime * speed);
+                this.transform.Translate(0, Time.deltaTime * speed, Time.deltaTime * speed);
                 anim.SetBool("isWalking", true);
                 anim.SetBool("isAttacking", false);
             }
