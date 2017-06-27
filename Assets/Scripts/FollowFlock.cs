@@ -13,6 +13,9 @@ public class FollowFlock : MonoBehaviour
     public static Vector3 goalPos = Vector3.zero;
     public float minSpeed;
     public float maxSpeed;
+    public float agentSpeed;
+    public float agentRotation;
+    public float agentNeighborDistance;
 
     [Header("Flock State")]
     public bool attack = true;

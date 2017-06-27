@@ -3165,18 +3165,21 @@ MonoBehaviour:
   flockPrefab: {fileID: 1482643832869528, guid: 20bd45cff10d7c446860dccb03234260,
     type: 2}
   goalPrefab: {fileID: 2083434893}
-  tankSize: 5
+  tankSize: 3
   numFlock: 20
   allFlock: []
   minSpeed: 0.5
   maxSpeed: 1
+  agentSpeed: 1
+  agentRotation: 3
+  agentNeighborDistance: 3
   attack: 1
   engage: 0
   bird: 0
   insect: 0
   player: {fileID: 1309456183}
   head: {fileID: 1224006829}
-  rotSpeed: 10
+  rotSpeed: 4
   speed: 1.5
   npcViewRange: 10
   npcViewAngle: 360
@@ -7983,6 +7986,9 @@ MonoBehaviour:
   allFlock: []
   minSpeed: 0.5
   maxSpeed: 1
+  agentSpeed: 1
+  agentRotation: 3
+  agentNeighborDistance: 3
   attack: 1
   engage: 0
   bird: 1
@@ -10049,6 +10055,9 @@ MonoBehaviour:
   allFlock: []
   minSpeed: 0.5
   maxSpeed: 1
+  agentSpeed: 1
+  agentRotation: 3
+  agentNeighborDistance: 3
   attack: 1
   engage: 0
   bird: 0

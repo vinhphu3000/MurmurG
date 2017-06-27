@@ -7,11 +7,11 @@ using UnityEngine;
 public class FlockerHead : MonoBehaviour
 {
 
-    public float speed = 0.1f;
-    public float rotationSpeed = 4.0f;
+    public float speed;
+    public float rotationSpeed;
     Vector3 averageHeading;
     Vector3 averagePosition;
-    public float neighborDistance = 1.0f;
+    public float neighborDistance;
     public bool attack = false;
     bool turning = false;
     public bool engage = false;
@@ -48,7 +48,9 @@ public class FlockerHead : MonoBehaviour
             transform.parent = GameObject.Find(manager).transform;
 
         }
-
+        speed = GameObject.Find(manager).GetComponent<FollowFlock>().agentSpeed;
+        rotationSpeed = GameObject.Find(manager).GetComponent<FollowFlock>().agentRotation;
+        neighborDistance = GameObject.Find(manager).GetComponent<FollowFlock>().agentNeighborDistance;
         minSpeedRange = GameObject.Find(manager).GetComponent<FollowFlock>().minSpeed;
         maxSpeedRange = GameObject.Find(manager).GetComponent<FollowFlock>().maxSpeed;
 
