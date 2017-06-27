@@ -4,25 +4,28 @@ using UnityEngine;
 
 public class FollowFlock : MonoBehaviour
 {
-
+    [Header("Flock Manager")]
     public GameObject flockPrefab;
     public GameObject goalPrefab;
     public float tankSize = 5;
-
-    public bool attack = true;
-    public bool engage = false;
-    public bool bird = false;
-    public bool insect = false;
-
-    public Transform player;
-    public Transform head;
-    Animator anim;
-
-
     public int numFlock = 20;
     public GameObject[] allFlock;
     public static Vector3 goalPos = Vector3.zero;
+    public float minSpeed;
+    public float maxSpeed;
 
+    [Header("Flock State")]
+    public bool attack = true;
+    public bool engage = false;
+
+    [Header("Flock Type")]
+    public bool bird = false;
+    public bool insect = false;
+
+    [Header("NPC Target")]
+    public Transform player;
+    public Transform head;
+    Animator anim;
     string state = "patrol";
     public float rotSpeed = 0.2f;
     public float speed = 1.5f;
@@ -38,7 +41,9 @@ public class FollowFlock : MonoBehaviour
         allFlock = new GameObject[numFlock];
         for (int i = 0; i < numFlock; i++)
         {
-            Vector3 pos = new Vector3(Random.Range(-tankSize, tankSize), Random.Range(-tankSize, tankSize), Random.Range(-tankSize, tankSize));
+            Vector3 pos = new Vector3(Random.Range(transform.position.x - tankSize, transform.position.x + tankSize), 
+                Random.Range(transform.position.y - tankSize, transform.position.y + tankSize), 
+                Random.Range(transform.position.z - tankSize, transform.position.z + tankSize));
             allFlock[i] = (GameObject)Instantiate(flockPrefab, pos, Quaternion.identity);
         }
     }

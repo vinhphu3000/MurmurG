@@ -3122,6 +3122,65 @@ Transform:
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 01de88b197ad9c84ab26770490cefeea, type: 2}
   m_PrefabInternal: {fileID: 636525676}
+--- !u!1 &694373672
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 694373673}
+  - component: {fileID: 694373674}
+  m_Layer: 0
+  m_Name: TadpoleManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &694373673
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 694373672}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 10.12, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1065972966}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &694373674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 694373672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 734ade469fd23fa4b89b0d4aaa61dede, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flockPrefab: {fileID: 1482643832869528, guid: 20bd45cff10d7c446860dccb03234260,
+    type: 2}
+  goalPrefab: {fileID: 2083434893}
+  tankSize: 5
+  numFlock: 20
+  allFlock: []
+  minSpeed: 0.5
+  maxSpeed: 1
+  attack: 1
+  engage: 0
+  bird: 0
+  insect: 0
+  player: {fileID: 1309456183}
+  head: {fileID: 1224006829}
+  rotSpeed: 10
+  speed: 1.5
+  npcViewRange: 10
+  npcViewAngle: 360
+  npcEngageMagnitude: 0.5
 --- !u!1001 &700504678
 Prefab:
   m_ObjectHideFlags: 0
@@ -4681,7 +4740,7 @@ Transform:
   m_Children:
   - {fileID: 1737952627}
   - {fileID: 2130055290}
-  - {fileID: 1417846862}
+  - {fileID: 694373673}
   - {fileID: 1654534445}
   - {fileID: 33275494}
   - {fileID: 1309456183}
@@ -6323,63 +6382,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1417846860
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1417846862}
-  - component: {fileID: 1417846861}
-  m_Layer: 0
-  m_Name: TadpoleManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1417846861
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1417846860}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 734ade469fd23fa4b89b0d4aaa61dede, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  flockPrefab: {fileID: 1482643832869528, guid: 20bd45cff10d7c446860dccb03234260,
-    type: 2}
-  goalPrefab: {fileID: 2083434893}
-  tankSize: 0.5
-  attack: 0
-  engage: 0
-  bird: 0
-  insect: 0
-  player: {fileID: 1309456183}
-  head: {fileID: 1224006829}
-  numFlock: 20
-  allFlock: []
-  rotSpeed: 10
-  speed: 1.5
-  npcViewRange: 2
-  npcViewAngle: 360
-  npcEngageMagnitude: 0.5
---- !u!4 &1417846862
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1417846860}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1065972966}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1418683932
 GameObject:
   m_ObjectHideFlags: 0
@@ -7977,14 +7979,16 @@ MonoBehaviour:
     type: 2}
   goalPrefab: {fileID: 984475321}
   tankSize: 5
+  numFlock: 20
+  allFlock: []
+  minSpeed: 0.5
+  maxSpeed: 1
   attack: 1
   engage: 0
   bird: 1
   insect: 0
   player: {fileID: 1309456183}
   head: {fileID: 1606265919}
-  numFlock: 20
-  allFlock: []
   rotSpeed: 10
   speed: 1.5
   npcViewRange: 10
@@ -10041,14 +10045,16 @@ MonoBehaviour:
     type: 2}
   goalPrefab: {fileID: 896560030}
   tankSize: 5
+  numFlock: 20
+  allFlock: []
+  minSpeed: 0.5
+  maxSpeed: 1
   attack: 1
   engage: 0
   bird: 0
   insect: 1
   player: {fileID: 1309456183}
   head: {fileID: 1529212607}
-  numFlock: 20
-  allFlock: []
   rotSpeed: 10
   speed: 1.5
   npcViewRange: 10

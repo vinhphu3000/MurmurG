@@ -18,13 +18,15 @@ public class FlockerHead : MonoBehaviour
 
     public bool bird = false;
     public bool insect = false;
+    public float minSpeedRange;
+    public float maxSpeedRange;
     string manager;
     // Use this for initialization
 
     void Start()
     {
 
-        speed = Random.Range(0.5f, 1.0f);
+        speed = Random.Range(0.5f, 1f);
     }
 
     // Update is called once per frame
@@ -46,6 +48,10 @@ public class FlockerHead : MonoBehaviour
             transform.parent = GameObject.Find(manager).transform;
 
         }
+
+        minSpeedRange = GameObject.Find(manager).GetComponent<FollowFlock>().minSpeed;
+        maxSpeedRange = GameObject.Find(manager).GetComponent<FollowFlock>().maxSpeed;
+
         if (Vector3.Distance(transform.position, transform.parent.position) >= GameObject.Find(manager).GetComponent<FollowFlock>().tankSize
         || transform.position.y <= -1.5f)
         {
@@ -62,7 +68,7 @@ public class FlockerHead : MonoBehaviour
             transform.rotation = Quaternion.Slerp(transform.rotation,
                 Quaternion.LookRotation(direction),
                 rotationSpeed * Time.deltaTime);
-            speed = Random.Range(0.5f, 1);
+            speed = Random.Range(minSpeedRange, maxSpeedRange);
         }
         else
         {
