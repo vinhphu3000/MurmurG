@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 114557633905095410}
   - component: {fileID: 96377199230846108}
   m_Layer: 0
-  m_Name: Flocker 3
+  m_Name: Tadpole
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -39,7 +39,7 @@ Transform:
   m_GameObject: {fileID: 1482643832869528}
   m_LocalRotation: {x: 0.048861332, y: -0.9234056, z: 0.12553927, w: 0.35940862}
   m_LocalPosition: {x: 11.176728, y: 2.530135, z: 7.1783676}
-  m_LocalScale: {x: 0.1, y: 0.05, z: 0.2}
+  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -196,9 +196,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7649f7c9cecac1c48a72e49c3b5948ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
-  rotationSpeed: 3
-  neighborDistance: 3
+  speed: 0.00001
+  rotationSpeed: 30
+  neighborDistance: 0.3
   attack: 0
   engage: 0
   bird: 0

@@ -68,7 +68,9 @@ public class FlockerHead : MonoBehaviour
         {
 
             if (attack) ApplyRules();
-            else if (engage) {
+
+            else if (engage)
+            {
                 if (Random.Range(0, 4) < 1) ApplyRules();
             }
 
@@ -122,7 +124,7 @@ public class FlockerHead : MonoBehaviour
                     }
 
                     FlockerHead anotherFlock = go.GetComponent<FlockerHead>();
-                    gSpeed = gSpeed + anotherFlock.speed;
+                    gSpeed = gSpeed + anotherFlock.speed; // - .05f;
                 }
             }
 
