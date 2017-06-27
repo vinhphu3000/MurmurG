@@ -17,6 +17,7 @@ public class FlockerHead : MonoBehaviour
     public bool engage = false;
 
     public bool bird = false;
+    public bool insect = false;
     string manager;
     // Use this for initialization
 
@@ -31,12 +32,19 @@ public class FlockerHead : MonoBehaviour
     {
         if (bird)
         {
-            manager = "FlockManager";
-            transform.parent = GameObject.Find(manager).GetComponent<FollowFlock>().transform;
-        } else
+            manager = "BirdManager";
+            transform.parent = GameObject.Find(manager).transform;
+        }
+        else if(insect)
         {
-            manager = "FlockManager2";
-            transform.parent = GameObject.Find(manager).GetComponent<FollowFlock>().transform;
+            manager = "InsectManager";
+            transform.parent = GameObject.Find(manager).transform;
+        }
+        else
+        {
+            manager = "TadpoleManager";
+            transform.parent = GameObject.Find(manager).transform;
+
         }
         if (Vector3.Distance(transform.position, transform.parent.position) >= GameObject.Find(manager).GetComponent<FollowFlock>().tankSize
         || transform.position.y <= -1.5f)
