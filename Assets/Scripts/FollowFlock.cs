@@ -8,20 +8,32 @@ public class FollowFlock : MonoBehaviour
     public GameObject flockPrefab;
     public GameObject goalPrefab;
     public float tankSize = 5;
+
     public bool attack = true;
     public bool engage = false;
     public bool bird = false;
     public bool insect = false;
+
+    public Transform player;
+    public Transform head;
+    Animator anim;
 
 
     public int numFlock = 20;
     public GameObject[] allFlock;
     public static Vector3 goalPos = Vector3.zero;
 
+    string state = "patrol";
+    public float rotSpeed = 0.2f;
+    public float speed = 1.5f;
+    public float npcViewRange;
+    public float npcViewAngle;
+    public float npcEngageMagnitude;
 
     // Use this for initialization
     void Start()
     {
+        anim = goalPrefab.GetComponent<Animator>();
 
         allFlock = new GameObject[numFlock];
         for (int i = 0; i < numFlock; i++)
@@ -34,8 +46,64 @@ public class FollowFlock : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //different flock types from the same flock prefab script
-        if (bird)
+        Vector3 npcDirection = player.position - goalPrefab.transform.position;
+        float angle = Vector3.Angle(npcDirection, head.up);
+
+        if (state == "patrol")
+        {
+            anim.SetBool("isIdle", false);
+            anim.SetBool("isWalking", true);
+            flockPrefab.GetComponent<Renderer>().sharedMaterial.color = Color.green;
+            //  flockManager.GetComponent<FollowFlock>().attack = false;
+            //   flockManager.GetComponent<FollowFlock>().engage = false;
+            attack = false;
+            engage = false;
+
+            
+        }
+        if (Vector3.Distance(transform.position, goalPrefab.transform.position) >= tankSize + 1)
+            goalPrefab.transform.position = transform.position;
+
+        if (Vector3.Distance(player.position, goalPrefab.transform.position) < npcViewRange && (angle < npcViewAngle || state == "pursuing")) //state == "pursuing")
+
+        {
+            state = "pursuing";
+            flockPrefab.GetComponent<Renderer>().sharedMaterial.color = Color.yellow;
+            attack = false;
+            engage = true;
+
+            goalPrefab.transform.rotation
+                = Quaternion.Slerp(goalPrefab.transform.rotation,
+                Quaternion.LookRotation(npcDirection), rotSpeed * Time.deltaTime);
+
+           // anim.SetBool("isIdle", false);
+            if (npcDirection.magnitude > npcEngageMagnitude)
+            {
+                goalPrefab.transform.Translate(0, 0, Time.deltaTime * speed);
+                anim.SetBool("isWalking", true);
+                anim.SetBool("isAttacking", false);
+            }
+            else
+            {
+              anim.SetBool("isAttacking", true);
+              anim.SetBool("isWalking", false);
+                flockPrefab.GetComponent<FlockerHead>().changeMaterial();
+                attack = true;
+                engage = false;
+
+            }
+        }
+        else
+        {
+            //   anim.SetBool("isIdle", true);
+           anim.SetBool("isWalking", true);
+           anim.SetBool("isAttacking", false);
+            state = "patrol";
+        }
+    
+
+            //different flock types from the same flock prefab script
+            if (bird)
         {
             for (int i = 0; i < numFlock; i++)
             {

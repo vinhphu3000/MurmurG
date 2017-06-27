@@ -3971,30 +3971,6 @@ MeshFilter:
 GameObject:
   m_PrefabParentObject: {fileID: 100078, guid: 5a35c5f0a89b9654d897ccd7c8f81bd0, type: 3}
   m_PrefabInternal: {fileID: 1961530882}
---- !u!114 &896560031
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 896560030}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f606738670eca8946bbb3f3dcf839e7b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 1309456183}
-  head: {fileID: 1529212607}
-  flockPrefab: {fileID: 1482643832869528, guid: 7e894984d842c4644af121626dd6278e,
-    type: 2}
-  flockManager: {fileID: 2130055289}
-  waypoints:
-  - {fileID: 1417801160}
-  rotSpeed: 10
-  speed: 0.5
-  npcViewRange: 5
-  npcViewAngle: 360
-  npcEngageMagnitude: 0.5
-  accuracyWP: 5
 --- !u!1 &906648848
 GameObject:
   m_ObjectHideFlags: 0
@@ -4203,30 +4179,6 @@ Transform:
 GameObject:
   m_PrefabParentObject: {fileID: 100078, guid: 5a35c5f0a89b9654d897ccd7c8f81bd0, type: 3}
   m_PrefabInternal: {fileID: 1370816089}
---- !u!114 &984475322
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 984475321}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f606738670eca8946bbb3f3dcf839e7b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 1309456183}
-  head: {fileID: 1606265919}
-  flockPrefab: {fileID: 1482643832869528, guid: 483857ca66c810742b89d3cc04343b4d,
-    type: 2}
-  flockManager: {fileID: 1737952626}
-  waypoints:
-  - {fileID: 1417801160}
-  rotSpeed: 10
-  speed: 0.5
-  npcViewRange: 5
-  npcViewAngle: 360
-  npcEngageMagnitude: 0.5
-  accuracyWP: 5
 --- !u!1 &1001125470
 GameObject:
   m_ObjectHideFlags: 0
@@ -6406,8 +6358,15 @@ MonoBehaviour:
   engage: 0
   bird: 0
   insect: 0
+  player: {fileID: 1309456183}
+  head: {fileID: 1224006829}
   numFlock: 20
   allFlock: []
+  rotSpeed: 10
+  speed: 1.5
+  npcViewRange: 2
+  npcViewAngle: 360
+  npcEngageMagnitude: 0.5
 --- !u!4 &1417846862
 Transform:
   m_ObjectHideFlags: 0
@@ -8022,8 +7981,15 @@ MonoBehaviour:
   engage: 0
   bird: 1
   insect: 0
+  player: {fileID: 1309456183}
+  head: {fileID: 1606265919}
   numFlock: 20
   allFlock: []
+  rotSpeed: 10
+  speed: 1.5
+  npcViewRange: 10
+  npcViewAngle: 360
+  npcEngageMagnitude: 0.5
 --- !u!102 &1737972342 stripped
 TextMesh:
   m_PrefabParentObject: {fileID: 102214044351826462, guid: a8b892e5dd7377442a7006e1384437c8,
@@ -9616,30 +9582,6 @@ Transform:
 GameObject:
   m_PrefabParentObject: {fileID: 100078, guid: 5a35c5f0a89b9654d897ccd7c8f81bd0, type: 3}
   m_PrefabInternal: {fileID: 9189197}
---- !u!114 &2083434894
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2083434893}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f606738670eca8946bbb3f3dcf839e7b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 1309456183}
-  head: {fileID: 1224006829}
-  flockPrefab: {fileID: 1482643832869528, guid: 20bd45cff10d7c446860dccb03234260,
-    type: 2}
-  flockManager: {fileID: 1417846860}
-  waypoints:
-  - {fileID: 1417801160}
-  rotSpeed: 10
-  speed: 0.5
-  npcViewRange: 1
-  npcViewAngle: 360
-  npcEngageMagnitude: 0.5
-  accuracyWP: 5
 --- !u!1 &2088505148
 GameObject:
   m_ObjectHideFlags: 0
@@ -10103,8 +10045,15 @@ MonoBehaviour:
   engage: 0
   bird: 0
   insect: 1
+  player: {fileID: 1309456183}
+  head: {fileID: 1529212607}
   numFlock: 20
   allFlock: []
+  rotSpeed: 10
+  speed: 1.5
+  npcViewRange: 10
+  npcViewAngle: 360
+  npcEngageMagnitude: 0.5
 --- !u!1 &2132012974
 GameObject:
   m_ObjectHideFlags: 0
