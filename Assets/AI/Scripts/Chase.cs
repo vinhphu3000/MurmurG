@@ -58,8 +58,11 @@ public class Chase : MonoBehaviour {
                 Quaternion.LookRotation(direction), rotSpeed * Time.deltaTime);
             this.transform.Translate(0, 0, Time.deltaTime * speed);
             */
-        }
-        if (this.transform.position.x > 6 || this.transform.position.z > 6 || this.transform.position.z < -6 || this.transform.position.x < -6) this.transform.position = Vector3.zero;
+        }     
+
+        if (Vector3.Distance(transform.position, flockManager.transform.position) >= flockManager.GetComponent<FollowFlock>().tankSize + 1)
+            transform.position = flockManager.transform.position;
+
         if (Vector3.Distance(player.position, this.transform.position) < npcViewRange && (angle < npcViewAngle || state == "pursuing")) //state == "pursuing")
 
         {

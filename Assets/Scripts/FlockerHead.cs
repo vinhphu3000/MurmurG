@@ -15,6 +15,9 @@ public class FlockerHead : MonoBehaviour
     public bool attack = false;
     bool turning = false;
     public bool engage = false;
+
+    public bool bird = false;
+    string manager;
     // Use this for initialization
 
     void Start()
@@ -26,8 +29,17 @@ public class FlockerHead : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Vector3.Distance(transform.position, Vector3.zero) >= GameObject.Find("FlockManager").GetComponent<FollowFlock>().tankSize 
-            || transform.position.y <= -1.5f)// FollowFlock.tankSize)
+        if (bird)
+        {
+            manager = "FlockManager";
+            transform.parent = GameObject.Find(manager).GetComponent<FollowFlock>().transform;
+        } else
+        {
+            manager = "FlockManager2";
+            transform.parent = GameObject.Find(manager).GetComponent<FollowFlock>().transform;
+        }
+        if (Vector3.Distance(transform.position, transform.parent.position) >= GameObject.Find(manager).GetComponent<FollowFlock>().tankSize
+        || transform.position.y <= -1.5f)
         {
             turning = true;
         }
@@ -38,7 +50,7 @@ public class FlockerHead : MonoBehaviour
 
         if (turning)
         {
-            Vector3 direction = Vector3.zero - transform.position;
+            Vector3 direction = transform.parent.position - transform.position;
             transform.rotation = Quaternion.Slerp(transform.rotation,
                 Quaternion.LookRotation(direction),
                 rotationSpeed * Time.deltaTime);
@@ -50,7 +62,6 @@ public class FlockerHead : MonoBehaviour
             if (attack) ApplyRules();
             else if (engage) {
                 if (Random.Range(0, 4) < 1) ApplyRules();
-             //   Debug.Log("engage is: " + engage);
             }
 
 
@@ -60,6 +71,7 @@ public class FlockerHead : MonoBehaviour
         }
     
         transform.Translate(0, 0, Time.deltaTime * speed);
+        
     }
 
     public void changeMaterial()
@@ -72,7 +84,7 @@ public class FlockerHead : MonoBehaviour
    public void ApplyRules()
     {
         GameObject[] gos;
-        gos = GameObject.Find("FlockManager").GetComponent<FollowFlock>().allFlock; //FollowFlock.allFlock;
+        gos = GameObject.Find(manager).GetComponent<FollowFlock>().allFlock; 
 
         Vector3 vCenter = Vector3.zero;
         Vector3 vAvoid = Vector3.zero;

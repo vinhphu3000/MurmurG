@@ -10,10 +10,11 @@ public class FollowFlock : MonoBehaviour
     public float tankSize = 5;
     public bool attack = true;
     public bool engage = false;
+    public bool bird = false;
+
 
     public int numFlock = 20;
-    public GameObject[] allFlock; 
-
+    public GameObject[] allFlock;
     public static Vector3 goalPos = Vector3.zero;
 
 
@@ -32,6 +33,18 @@ public class FollowFlock : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (bird)
+        {
+            for (int i = 0; i < numFlock; i++)
+                allFlock[i].GetComponent<FlockerHead>().bird = true;
+        }
+        else
+        {
+            for (int i = 0; i < numFlock; i++)
+                allFlock[i].GetComponent<FlockerHead>().bird = false;
+        
+        }
+    
         if (attack)
         {
             goalPos = goalPrefab.transform.position;
@@ -73,13 +86,17 @@ public class FollowFlock : MonoBehaviour
 
     void RandomGoal()
     {
-        goalPos = new Vector3(Random.Range(-tankSize, tankSize), Random.Range(-0, tankSize), Random.Range(-tankSize, tankSize));
+        goalPos = new Vector3
+            (Random.Range(transform.position.x - tankSize, transform.position.x + tankSize), 
+            Random.Range(-1.5f, transform.position.y + tankSize), 
+            Random.Range(transform.position.z - tankSize, transform.position.z + tankSize));
         goalPrefab.transform.position = goalPos;
     }
 
     void OnDrawGizmos()
     {
         Gizmos.color = new Color(1, 0, 0, 0.5F);
-        Gizmos.DrawWireCube(new Vector3(0, tankSize/2 - 1.5f,0), new Vector3(tankSize * 2, tankSize, tankSize * 2));
+        Gizmos.DrawWireCube(new Vector3(transform.position.x, transform.position.y + tankSize/2 - .75f,transform.position.z), 
+            new Vector3(tankSize * 2, tankSize + 1.5f, tankSize * 2));
     }
 }
