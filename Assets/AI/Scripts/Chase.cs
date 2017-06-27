@@ -36,38 +36,37 @@ public class Chase : MonoBehaviour {
         {
             anim.SetBool("isIdle", false);
             anim.SetBool("isWalking", true);
-           // player.GetComponent<Renderer>().material.color = Color.green;
             flockPrefab.GetComponent<Renderer>().sharedMaterial.color = Color.green;
             flockManager.GetComponent<FollowFlock>().attack = false;
-          //  flockPrefab.GetComponent<FlockerHead>().attack = false;
+            flockManager.GetComponent<FollowFlock>().engage = false;
 
-            //  if(Vector3.Distance(waypoints[currentWP].transform.position, transform.position) < accuracyWP)
-            //   {
+            /* Waypoint Manager
+              if(Vector3.Distance(waypoints[currentWP].transform.position, transform.position) < accuracyWP)
+               {
 
-            /*currentWP++;
+            currentWP++;
         if(currentWP >= waypoints.Length)
             {
                 currentWP = 0;
-            }*/
+            }
 
-            //    currentWP = Random.Range(0, waypoints.Length);
-            //   }
-            /*
+                currentWP = Random.Range(0, waypoints.Length);
+               }
+            
             direction = waypoints[currentWP].transform.position - transform.position;
             this.transform.rotation = Quaternion.Slerp(transform.rotation,
                 Quaternion.LookRotation(direction), rotSpeed * Time.deltaTime);
-            this.transform.Translate(0, 0, Time.deltaTime * speed);*/
+            this.transform.Translate(0, 0, Time.deltaTime * speed);
+            */
         }
-
+        if (this.transform.position.x > 6 || this.transform.position.z > 6 || this.transform.position.z < -6 || this.transform.position.x < -6) this.transform.position = Vector3.zero;
         if (Vector3.Distance(player.position, this.transform.position) < npcViewRange && (angle < npcViewAngle || state == "pursuing")) //state == "pursuing")
 
         {
              state = "pursuing";
-           // player.GetComponent<Renderer>().material.color = Color.yellow;
             flockPrefab.GetComponent<Renderer>().sharedMaterial.color = Color.yellow;
-            flockManager.GetComponent<FollowFlock>().attack = true;
-          //  flockPrefab.GetComponent<FlockerHead>().attack = true;
-
+            flockManager.GetComponent<FollowFlock>().attack = false;
+            flockManager.GetComponent<FollowFlock>().engage = true;
 
             this.transform.rotation 
                 = Quaternion.Slerp(this.transform.rotation,
@@ -76,7 +75,7 @@ public class Chase : MonoBehaviour {
             anim.SetBool("isIdle", false);
             if(direction.magnitude > npcEngageMagnitude)
             {
-                this.transform.Translate(0, Time.deltaTime * speed, Time.deltaTime * speed);
+                this.transform.Translate(0, 0, Time.deltaTime * speed);
                 anim.SetBool("isWalking", true);
                 anim.SetBool("isAttacking", false);
             }
@@ -84,10 +83,10 @@ public class Chase : MonoBehaviour {
             {
                 anim.SetBool("isAttacking", true);
                 anim.SetBool("isWalking", false);
-        //        player.GetComponent<Renderer>().material.color = Color.red;
-            //    flockPrefab.GetComponent<Renderer>().sharedMaterial.color = Color.red;
                 flockPrefab.GetComponent<FlockerHead>().changeMaterial();
-            //    flockPrefab.GetComponent<FlockerHead>().attack = true;
+                flockManager.GetComponent<FollowFlock>().attack = true;
+                flockManager.GetComponent<FollowFlock>().engage = false;
+
             }
         }
         else

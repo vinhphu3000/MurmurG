@@ -199,3 +199,6 @@ MonoBehaviour:
   speed: 2
   rotationSpeed: 4
   neighborDistance: 3
+  attack: 0
+  engage: 0
+  flockManager: {fileID: 0}

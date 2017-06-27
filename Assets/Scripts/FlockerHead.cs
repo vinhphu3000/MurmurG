@@ -14,16 +14,20 @@ public class FlockerHead : MonoBehaviour
     public float neighborDistance = 1.0f;
     public bool attack = false;
     bool turning = false;
+    public bool engage = false;
     // Use this for initialization
+
     void Start()
     {
+
         speed = Random.Range(0.5f, 1.0f);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Vector3.Distance(transform.position, Vector3.zero) >= FollowFlock.tankSize)
+        if (Vector3.Distance(transform.position, Vector3.zero) >= GameObject.Find("FlockManager").GetComponent<FollowFlock>().tankSize 
+            || transform.position.y <= -1.5f)// FollowFlock.tankSize)
         {
             turning = true;
         }
@@ -44,10 +48,17 @@ public class FlockerHead : MonoBehaviour
         {
 
             if (attack) ApplyRules();
+            else if (engage) {
+                if (Random.Range(0, 4) < 1) ApplyRules();
+             //   Debug.Log("engage is: " + engage);
+            }
 
-            else if (Random.Range(0, 10) < 1)
-               ApplyRules();
+
+            else {
+                if (Random.Range(0, 10) < 1) ApplyRules();
+            }
         }
+    
         transform.Translate(0, 0, Time.deltaTime * speed);
     }
 
@@ -61,7 +72,7 @@ public class FlockerHead : MonoBehaviour
    public void ApplyRules()
     {
         GameObject[] gos;
-        gos = FollowFlock.allFlock;
+        gos = GameObject.Find("FlockManager").GetComponent<FollowFlock>().allFlock; //FollowFlock.allFlock;
 
         Vector3 vCenter = Vector3.zero;
         Vector3 vAvoid = Vector3.zero;
