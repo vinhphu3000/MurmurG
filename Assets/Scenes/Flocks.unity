@@ -308,7 +308,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &33275494
 Transform:
   m_ObjectHideFlags: 0
@@ -3145,7 +3145,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 694373672}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10.12, y: 0, z: 0}
+  m_LocalPosition: {x: 6, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1065972966}
@@ -3177,11 +3177,11 @@ MonoBehaviour:
   engage: 0
   bird: 0
   insect: 0
-  player: {fileID: 1309456183}
+  player: {fileID: 1826423821}
   head: {fileID: 1224006829}
   rotSpeed: 4
   speed: 1.5
-  npcViewRange: 10
+  npcViewRange: 4
   npcViewAngle: 360
   npcEngageMagnitude: 0.5
 --- !u!1001 &700504678
@@ -5315,7 +5315,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4000010560871102, guid: d379ed0a5618c9f479f58bd83a2d0ad3, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -0.74
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4000010560871102, guid: d379ed0a5618c9f479f58bd83a2d0ad3, type: 2}
       propertyPath: m_LocalRotation.x
@@ -5673,7 +5673,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!23 &1309456180
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6366,7 +6366,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1417801161
 Transform:
   m_ObjectHideFlags: 0
@@ -7961,7 +7961,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1737952626}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -10.13, y: 0, z: 0}
+  m_LocalPosition: {x: -6, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1065972966}
@@ -7981,7 +7981,7 @@ MonoBehaviour:
   flockPrefab: {fileID: 1482643832869528, guid: 483857ca66c810742b89d3cc04343b4d,
     type: 2}
   goalPrefab: {fileID: 984475321}
-  tankSize: 5
+  tankSize: 3
   numFlock: 20
   allFlock: []
   minSpeed: 0.5
@@ -7993,11 +7993,11 @@ MonoBehaviour:
   engage: 0
   bird: 1
   insect: 0
-  player: {fileID: 1309456183}
+  player: {fileID: 1826423821}
   head: {fileID: 1606265919}
   rotSpeed: 10
   speed: 1.5
-  npcViewRange: 10
+  npcViewRange: 4
   npcViewAngle: 360
   npcEngageMagnitude: 0.5
 --- !u!102 &1737972342 stripped
@@ -8383,6 +8383,11 @@ MeshFilter:
 --- !u!1 &1826423815 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1000011021619270, guid: d379ed0a5618c9f479f58bd83a2d0ad3,
+    type: 2}
+  m_PrefabInternal: {fileID: 1205990114}
+--- !u!4 &1826423821 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4000010560871102, guid: d379ed0a5618c9f479f58bd83a2d0ad3,
     type: 2}
   m_PrefabInternal: {fileID: 1205990114}
 --- !u!65 &1826423822
@@ -10050,7 +10055,7 @@ MonoBehaviour:
   flockPrefab: {fileID: 1482643832869528, guid: 7e894984d842c4644af121626dd6278e,
     type: 2}
   goalPrefab: {fileID: 896560030}
-  tankSize: 5
+  tankSize: 3
   numFlock: 20
   allFlock: []
   minSpeed: 0.5
@@ -10062,11 +10067,11 @@ MonoBehaviour:
   engage: 0
   bird: 0
   insect: 1
-  player: {fileID: 1309456183}
+  player: {fileID: 1826423821}
   head: {fileID: 1529212607}
   rotSpeed: 10
   speed: 1.5
-  npcViewRange: 10
+  npcViewRange: 4
   npcViewAngle: 360
   npcEngageMagnitude: 0.5
 --- !u!1 &2132012974
