@@ -16,11 +16,13 @@ public class FlockerHead : MonoBehaviour
     bool turning = false;
     public bool engage = false;
 
-    public bool bird = false;
-    public bool insect = false;
+    public enum FlockType {BIRD, INSECT, TADPOLE };
+    public FlockType activeFlockType = FlockType.BIRD;
+
     public float minSpeedRange;
     public float maxSpeedRange;
     string manager;
+    GameObject flockManager;
     // Use this for initialization
 
     void Start()
@@ -32,29 +34,41 @@ public class FlockerHead : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (bird)
-        {
-            manager = "BirdManager";
-            transform.parent = GameObject.Find(manager).transform;
-        }
-        else if(insect)
-        {
-            manager = "InsectManager";
-            transform.parent = GameObject.Find(manager).transform;
-        }
-        else
-        {
-            manager = "TadpoleManager";
-            transform.parent = GameObject.Find(manager).transform;
 
-        }
-        speed = GameObject.Find(manager).GetComponent<FollowFlock>().agentSpeed;
-        rotationSpeed = GameObject.Find(manager).GetComponent<FollowFlock>().agentRotation;
-        neighborDistance = GameObject.Find(manager).GetComponent<FollowFlock>().agentNeighborDistance;
-        minSpeedRange = GameObject.Find(manager).GetComponent<FollowFlock>().minSpeed;
-        maxSpeedRange = GameObject.Find(manager).GetComponent<FollowFlock>().maxSpeed;
+        switch (activeFlockType)
+        {
+            case FlockType.BIRD:
+                {
+                    manager = "BirdManager";
+                    transform.parent = GameObject.Find(manager).transform;
+                }
+                break;
 
-        if (Vector3.Distance(transform.position, transform.parent.position) >= GameObject.Find(manager).GetComponent<FollowFlock>().tankSize
+            case FlockType.INSECT:
+                {
+                    manager = "InsectManager";
+                    transform.parent = GameObject.Find(manager).transform;
+                }
+                break;
+
+            case FlockType.TADPOLE:
+                {
+                    manager = "TadpoleManager";
+                    transform.parent = GameObject.Find(manager).transform;
+                }
+                break;
+        }
+         
+
+        flockManager = GameObject.Find(manager);
+
+        speed = flockManager.GetComponent<FollowFlock>().agentSpeed;
+        rotationSpeed = flockManager.GetComponent<FollowFlock>().agentRotation;
+        neighborDistance = flockManager.GetComponent<FollowFlock>().agentNeighborDistance;
+        minSpeedRange = flockManager.GetComponent<FollowFlock>().minSpeed;
+        maxSpeedRange = flockManager.GetComponent<FollowFlock>().maxSpeed;
+
+        if (Vector3.Distance(transform.position, transform.parent.position) >= flockManager.GetComponent<FollowFlock>().tankSize
         || transform.position.y <= -1.5f)
         {
             turning = true;
@@ -94,7 +108,7 @@ public class FlockerHead : MonoBehaviour
 
     public void changeMaterial()
     {
-        this.gameObject.GetComponent<Renderer>().sharedMaterial.color = Color.red;
+        gameObject.GetComponent<Renderer>().sharedMaterial.color = Color.red;
         Debug.Log("Change Material has been triggered to Red");
 
     }
@@ -102,7 +116,7 @@ public class FlockerHead : MonoBehaviour
    public void ApplyRules()
     {
         GameObject[] gos;
-        gos = GameObject.Find(manager).GetComponent<FollowFlock>().allFlock; 
+        gos = flockManager.GetComponent<FollowFlock>().allFlock; 
 
         Vector3 vCenter = Vector3.zero;
         Vector3 vAvoid = Vector3.zero;
