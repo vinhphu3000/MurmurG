@@ -12,12 +12,12 @@ public class FlockerHead : MonoBehaviour
     Vector3 averageHeading;
     Vector3 averagePosition;
     public float neighborDistance;
-    public bool attack = false;
     bool turning = false;
-    public bool engage = false;
 
     public enum FlockType {BIRD, INSECT, TADPOLE };
+    public enum FlockState { PATROL, PURSUE, ATTACK};
     public FlockType activeFlockType = FlockType.BIRD;
+    public FlockState activeFlockState = FlockState.PATROL;
 
     public float minSpeedRange;
     public float maxSpeedRange;
@@ -89,16 +89,25 @@ public class FlockerHead : MonoBehaviour
         else
         {
 
-            if (attack) ApplyRules();
-
-            else if (engage)
+            switch (activeFlockState)
             {
-                if (Random.Range(0, 4) < 1) ApplyRules();
-            }
+                case FlockState.PATROL:
+                    {
+                        if (Random.Range(0, 10) < 1) ApplyRules();
+                    }
+                    break;
 
+                case FlockState.PURSUE:
+                    {
+                        if (Random.Range(0, 4) < 1) ApplyRules();
+                    }
+                    break;
 
-            else {
-                if (Random.Range(0, 10) < 1) ApplyRules();
+                case FlockState.ATTACK:
+                    {
+                        ApplyRules();
+                    }
+                    break;
             }
         }
     

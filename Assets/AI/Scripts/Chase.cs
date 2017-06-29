@@ -37,8 +37,6 @@ public class Chase : MonoBehaviour {
             anim.SetBool("isIdle", false);
             anim.SetBool("isWalking", true);
             flockPrefab.GetComponent<Renderer>().sharedMaterial.color = Color.green;
-            flockManager.GetComponent<FollowFlock>().attack = false;
-            flockManager.GetComponent<FollowFlock>().engage = false;
 
             /* Waypoint Manager
               if(Vector3.Distance(waypoints[currentWP].transform.position, transform.position) < accuracyWP)
@@ -68,8 +66,7 @@ public class Chase : MonoBehaviour {
         {
              state = "pursuing";
             flockPrefab.GetComponent<Renderer>().sharedMaterial.color = Color.yellow;
-            flockManager.GetComponent<FollowFlock>().attack = false;
-            flockManager.GetComponent<FollowFlock>().engage = true;
+          
 
             this.transform.rotation 
                 = Quaternion.Slerp(this.transform.rotation,
@@ -87,8 +84,7 @@ public class Chase : MonoBehaviour {
                 anim.SetBool("isAttacking", true);
                 anim.SetBool("isWalking", false);
                 flockPrefab.GetComponent<FlockerHead>().changeMaterial();
-                flockManager.GetComponent<FollowFlock>().attack = true;
-                flockManager.GetComponent<FollowFlock>().engage = false;
+       
 
             }
         }

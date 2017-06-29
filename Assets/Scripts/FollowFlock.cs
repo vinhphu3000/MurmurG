@@ -5,7 +5,8 @@ using UnityEngine;
 public class FollowFlock : MonoBehaviour
 {
     public enum FlockType { BIRD, INSECT, TADPOLE };
-    public enum NpcState { PATROL, PURSUE, ATTACK};
+    public enum NpcState { PATROL, PURSUE, ATTACK };
+    public enum FlockState { PATROL, PURSUE, ATTACK };
     [Header("Flock Manager")]
     public GameObject flockPrefab;
     public float tankSize = 5;
@@ -18,10 +19,7 @@ public class FollowFlock : MonoBehaviour
     public float agentRotation;
     public float agentNeighborDistance;
     public FlockType activeFlockType = FlockType.BIRD;
-
-    [Header("Flock State")]
-    public bool attack = true;
-    public bool engage = false;
+    public FlockState activeFlockState = FlockState.PATROL;
 
     [Header("NPC Target")]
     public GameObject goalPrefab;
@@ -81,24 +79,22 @@ public class FollowFlock : MonoBehaviour
                     anim.SetBool("isWalking", true);
                     anim.SetBool("isAttacking", false);
                     flockPrefab.GetComponent<Renderer>().sharedMaterial.color = Color.green;
-                    attack = false;
-                    engage = false;
+                    activeFlockState = FlockState.PATROL;
                 }
                 break;
 
             case NpcState.PURSUE:
                 {
                     flockPrefab.GetComponent<Renderer>().sharedMaterial.color = Color.yellow;
-                    attack = false;
-                    engage = true;
 
                     goalPrefab.transform.rotation
                         = Quaternion.Slerp(goalPrefab.transform.rotation,
                         Quaternion.LookRotation(npcDirection), rotSpeed * Time.deltaTime);
 
                     goalPrefab.transform.Translate(0, 0, Time.deltaTime * speed);
-                        anim.SetBool("isWalking", true);
-                        anim.SetBool("isAttacking", false);                
+                    anim.SetBool("isWalking", true);
+                    anim.SetBool("isAttacking", false);
+                    activeFlockState = FlockState.PURSUE;
                 }
                 break;
 
@@ -107,13 +103,12 @@ public class FollowFlock : MonoBehaviour
                     anim.SetBool("isAttacking", true);
                     anim.SetBool("isWalking", false);
                     flockPrefab.GetComponent<FlockerHead>().changeMaterial();
-                    attack = true;
-                    engage = false;
+                    activeFlockState = FlockState.ATTACK;
                 }
                 break;
         }
-  
-      
+
+
 
         //different flock types from the same flock prefab script
 
@@ -147,8 +142,48 @@ public class FollowFlock : MonoBehaviour
 
                 break;
         }
-   
+
         // different global behaviors for flock prefab, perhaps integrate custom features with respect to flock types
+
+        switch (activeFlockState)
+        {
+            case FlockState.PATROL:
+                {
+
+                    for (int i = 0; i < numFlock; i++)
+                    {
+                        allFlock[i].GetComponent<FlockerHead>().activeFlockState = FlockerHead.FlockState.PATROL;
+                    }
+                    if (Random.Range(0, 10000) < 50) RandomGoal();
+                }
+                break;
+
+            case FlockState.PURSUE:
+                {
+                    goalPos = goalPrefab.transform.position;
+
+                    for (int i = 0; i < numFlock; i++)
+                    {
+                        allFlock[i].GetComponent<FlockerHead>().activeFlockState = FlockerHead.FlockState.PURSUE;
+                    }
+                }
+                break;
+
+            case FlockState.ATTACK:
+                {
+                    goalPos = goalPrefab.transform.position;
+                    for (int i = 0; i < numFlock; i++)
+                    {
+                        allFlock[i].GetComponent<FlockerHead>().activeFlockState = FlockerHead.FlockState.ATTACK;
+                    }
+
+                }
+                break;
+        }
+
+    }
+
+        /*
         if (attack)
         {
             goalPos = goalPrefab.transform.position;
@@ -184,7 +219,8 @@ public class FollowFlock : MonoBehaviour
                 RandomGoal();
             }
         }
-    }
+        */
+    
 
     void RandomGoal()
     {
