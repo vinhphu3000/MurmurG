@@ -34,7 +34,34 @@ public class FlockerHead : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        ChangeFlockType();
+        ChangeDirectionManager();
+        ChangeFlockProperties();
+        if (turning)
+        {
+            ChangeDirection();
+        }
+        else
+        {
+            ChangeFlockState();
+        }
+        MoveAgent();        
+    }
 
+    void MoveAgent()
+    {
+        transform.Translate(0, 0, Time.deltaTime * speed);
+    }
+
+    public void changeMaterial()
+    {
+        gameObject.GetComponent<Renderer>().sharedMaterial.color = Color.red;
+        Debug.Log("Change Material has been triggered to Red");
+
+    }
+
+    void ChangeFlockType()
+    {
         switch (activeFlockType)
         {
             case FlockType.BIRD:
@@ -58,16 +85,13 @@ public class FlockerHead : MonoBehaviour
                 }
                 break;
         }
-         
 
         flockManager = GameObject.Find(manager);
 
-        speed = flockManager.GetComponent<FollowFlock>().agentSpeed;
-        rotationSpeed = flockManager.GetComponent<FollowFlock>().agentRotation;
-        neighborDistance = flockManager.GetComponent<FollowFlock>().agentNeighborDistance;
-        minSpeedRange = flockManager.GetComponent<FollowFlock>().minSpeed;
-        maxSpeedRange = flockManager.GetComponent<FollowFlock>().maxSpeed;
+    }
 
+    void ChangeDirectionManager()
+    {
         if (Vector3.Distance(transform.position, transform.parent.position) >= flockManager.GetComponent<FollowFlock>().tankSize
         || transform.position.y <= -1.5f)
         {
@@ -77,49 +101,48 @@ public class FlockerHead : MonoBehaviour
         {
             turning = false;
         }
-
-        if (turning)
-        {
-            Vector3 direction = transform.parent.position - transform.position;
-            transform.rotation = Quaternion.Slerp(transform.rotation,
-                Quaternion.LookRotation(direction),
-                rotationSpeed * Time.deltaTime);
-            speed = Random.Range(minSpeedRange, maxSpeedRange);
-        }
-        else
-        {
-
-            switch (activeFlockState)
-            {
-                case FlockState.PATROL:
-                    {
-                        if (Random.Range(0, 10) < 1) ApplyRules();
-                    }
-                    break;
-
-                case FlockState.PURSUE:
-                    {
-                        if (Random.Range(0, 4) < 1) ApplyRules();
-                    }
-                    break;
-
-                case FlockState.ATTACK:
-                    {
-                        ApplyRules();
-                    }
-                    break;
-            }
-        }
-    
-        transform.Translate(0, 0, Time.deltaTime * speed);
-        
     }
 
-    public void changeMaterial()
+    void ChangeFlockProperties()
     {
-        gameObject.GetComponent<Renderer>().sharedMaterial.color = Color.red;
-        Debug.Log("Change Material has been triggered to Red");
+        speed = flockManager.GetComponent<FollowFlock>().agentSpeed;
+        rotationSpeed = flockManager.GetComponent<FollowFlock>().agentRotation;
+        neighborDistance = flockManager.GetComponent<FollowFlock>().agentNeighborDistance;
+        minSpeedRange = flockManager.GetComponent<FollowFlock>().minSpeed;
+        maxSpeedRange = flockManager.GetComponent<FollowFlock>().maxSpeed;
+    }
 
+    void ChangeDirection()
+    {
+        Vector3 direction = transform.parent.position - transform.position;
+        transform.rotation = Quaternion.Slerp(transform.rotation,
+            Quaternion.LookRotation(direction),
+            rotationSpeed * Time.deltaTime);
+        speed = Random.Range(minSpeedRange, maxSpeedRange);
+    }
+
+    void ChangeFlockState()
+    {
+        switch (activeFlockState)
+        {
+            case FlockState.PATROL:
+                {
+                    if (Random.Range(0, 10) < 1) ApplyRules();
+                }
+                break;
+
+            case FlockState.PURSUE:
+                {
+                    if (Random.Range(0, 4) < 1) ApplyRules();
+                }
+                break;
+
+            case FlockState.ATTACK:
+                {
+                    ApplyRules();
+                }
+                break;
+        }
     }
 
    public void ApplyRules()
