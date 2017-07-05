@@ -1,4 +1,4 @@
-﻿ Shader "Custom/StandardVertexAnim" {
+﻿ Shader "Custom/Bubbling" {
      Properties {
 
          _Color ("Color", Color) = (1,1,1,1)
@@ -6,25 +6,9 @@
          _Glossiness ("Smoothness", Range(0,1)) = 0.5
          _Metallic ("Metallic", Range(0,1)) = 0.0
          _Amount ("Amount", Range(-100,100)) = 1.0
-         _WaveValueX1 ("WaveValueX1", Range(-100,100)) = 1.0
-         _WaveValueX2 ("WaveValueX2", Range(-100,100)) = 1.0
-         _WaveValueX3 ("WaveValueX3", Range(-100,100)) = 1.0
-		 _WaveValueY1("WaveValueY1", Range(-100,100)) = 1.0
-		 _WaveValueY2("WaveValueY2", Range(-100,100)) = 1.0
-		 _WaveValueY3("WaveValueY3", Range(-100,100)) = 1.0
-		 _WaveValueZ1("WaveValueZ1", Range(-100,100)) = 1.0
-		 _WaveValueZ2("WaveValueZ2", Range(-100,100)) = 1.0
-		 _WaveValueZ3("WaveValueZ3", Range(-100,100)) = 1.0
-
-		 _BubbleValue1("BubbleValue1", Range(-100,100)) = 1.0
-		 _BubbleValue2("BubbleValue2", Range(-100,100)) = 1.0
-		 _BubbleValue3("BubbleValue3", Range(-100,100)) = 1.0
-
-	     _FatValue1("FatValue1", Range(-100,100)) = 1.0
-
-
-
-		 
+         _Value1 ("Value1", Range(-100,100)) = 1.0
+         _Value2 ("Value2", Range(-100,100)) = 1.0
+         _Value3 ("Value3", Range(-100,100)) = 1.0
      }
      SubShader {
          Tags { "RenderType"="Opaque" }
@@ -48,28 +32,9 @@
          half _Metallic;
          fixed4 _Color;
          float _Amount;
-
-         float _WaveValueX1;
-         float _WaveValueX2;
-         float _WaveValueX3;
-		 float _WaveValueY1;
-		 float _WaveValueY2;
-		 float _WaveValueY3;
-		 float _WaveValueZ1;
-		 float _WaveValueZ2;
-		 float _WaveValueZ3;
-
-		 float _BubbleValue1;
-		 float _BubbleValue2;
-		 float _BubbleValue3;
-
-		 float _FatValue1;
-	//	 float _FatValue2;
-	//	 float _FatValue3;
-	
-
-
-		 float _BubbleValueGlobal;
+         float _Value1;
+         float _Value2;
+         float _Value3;
  
          void surf (Input IN, inout SurfaceOutputStandard o) {
              // Albedo comes from a texture tinted by color
@@ -86,26 +51,16 @@
            //  v.vertex.y += _Amount * abs(sin(_Time * 200)) * v.color.y;
 
            //Fat Mesh
-          v.vertex.xyz += v.normal * _FatValue1;
+         //  v.vertex.xyz += v.normal * _Value1;
 
            //Wave Mesh
         //   v.vertex.x += sin((v.vertex.y + _Time * _Value3 ) * _Value2 ) * _Value1;
      //   v.vertex.x += sin((v.vertex.x + _Time * _Value3 ) * _Value2 ) * _Value1;
     //     v.vertex.y += sin((v.vertex.y + _Time * _Value3 ) * _Value2 ) * _Value1;
-
-			 // X Axis Sin Wave Deformation
-         v.vertex.z += sin((v.vertex.z + _Time * _WaveValueX3 ) * _WaveValueX2 ) * _WaveValueX1;
-
-
-		 // Y Axis Sin Wave Deformation
-		 v.vertex.z += sin((v.vertex.z + _Time * _WaveValueY3) * _WaveValueY2) * _WaveValueY1;
-
-
-		 // Z Axis Sin Wave Deformation
-		 v.vertex.z += sin((v.vertex.z + _Time * _WaveValueZ3) * _WaveValueZ2) * _WaveValueZ1;
+    //     v.vertex.z += sin((v.vertex.z + _Time * _Value3 ) * _Value2 ) * _Value1;
 
        //Bubbling Mesh
-       v.vertex.xyz += v.normal * ( sin((v.vertex.x + _Time * _BubbleValue3) * _BubbleValue2) + cos((v.vertex.z + _Time* _BubbleValue3) * _BubbleValue2)) * _BubbleValue1;
+       v.vertex.xyz += v.normal * ( sin((v.vertex.x + _Time * _Value3) * _Value2) + cos((v.vertex.z + _Time* _Value3) * _Value2)) * _Value1;
 
          }
  

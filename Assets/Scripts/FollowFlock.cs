@@ -33,6 +33,9 @@ public class FollowFlock : MonoBehaviour
     public float npcViewAngle;
     public float npcEngageMagnitude;
 
+    Vector3 npcDirection;
+    float angle;
+
  
     // Use this for initialization
     void Start()
@@ -52,11 +55,19 @@ public class FollowFlock : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 npcDirection = player.position - goalPrefab.transform.position;
-        float angle = Vector3.Angle(npcDirection, head.up);
+        NpcStateManager();
+        SwitchNpcState();
+        SwitchFlockType();
+        SwitchFlockState();
+    }
+
+    void NpcStateManager()
+    {
+        npcDirection = player.position - goalPrefab.transform.position;
+        angle = Vector3.Angle(npcDirection, head.up);
 
         // reset NPC if too far outside of tank
-        if (Vector3.Distance(transform.position, goalPrefab.transform.position) >= tankSize + 1)
+        if (Vector3.Distance(transform.position, goalPrefab.transform.position) >= tankSize + 2)
             goalPrefab.transform.position = transform.position;
 
         if (Vector3.Distance(player.position, goalPrefab.transform.position) < npcViewRange
@@ -70,7 +81,10 @@ public class FollowFlock : MonoBehaviour
         {
             activeNpcState = NpcState.PATROL;
         }
+    }
 
+    void SwitchNpcState()
+    {
         switch (activeNpcState)
         {
             case NpcState.PATROL:
@@ -107,9 +121,10 @@ public class FollowFlock : MonoBehaviour
                 }
                 break;
         }
+    }
 
-
-
+    void SwitchFlockType()
+    {
         //different flock types from the same flock prefab script
 
         switch (activeFlockType)
@@ -142,6 +157,16 @@ public class FollowFlock : MonoBehaviour
 
                 break;
         }
+    }
+
+    void SwitchFlockState()
+    {
+
+
+
+
+
+
 
         // different global behaviors for flock prefab, perhaps integrate custom features with respect to flock types
 
@@ -180,47 +205,10 @@ public class FollowFlock : MonoBehaviour
                 }
                 break;
         }
-
     }
 
-        /*
-        if (attack)
-        {
-            goalPos = goalPrefab.transform.position;
-            for (int i = 0; i < numFlock; i++)
-            {
-                allFlock[i].GetComponent<FlockerHead>().attack = true;
-                allFlock[i].GetComponent<FlockerHead>().engage = false;
-            }
-        }
 
-        else if (engage)
-        {
-            goalPos = goalPrefab.transform.position;
 
-            for (int i = 0; i < numFlock; i++)
-            {
-                allFlock[i].GetComponent<FlockerHead>().attack = false;
-                allFlock[i].GetComponent<FlockerHead>().engage = true;
-            }
-
-        }
-
-        else
-        {
-
-            for (int i = 0; i < numFlock; i++)
-            {
-                allFlock[i].GetComponent<FlockerHead>().attack = false;
-                allFlock[i].GetComponent<FlockerHead>().engage = false;
-            }
-            if (Random.Range(0, 10000) < 50)
-            {
-                RandomGoal();
-            }
-        }
-        */
-    
 
     void RandomGoal()
     {

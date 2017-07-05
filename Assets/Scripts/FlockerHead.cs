@@ -48,10 +48,7 @@ public class FlockerHead : MonoBehaviour
         MoveAgent();        
     }
 
-    void MoveAgent()
-    {
-        transform.Translate(0, 0, Time.deltaTime * speed);
-    }
+
 
     public void changeMaterial()
     {
@@ -92,8 +89,8 @@ public class FlockerHead : MonoBehaviour
 
     void ChangeDirectionManager()
     {
-        if (Vector3.Distance(transform.position, transform.parent.position) >= flockManager.GetComponent<FollowFlock>().tankSize
-        || transform.position.y <= -1.5f)
+        if (Vector3.Distance(transform.position, transform.parent.position) >= flockManager.GetComponent<FollowFlock>().tankSize)
+       // || transform.position.y <= -1.5f)
         {
             turning = true;
         }
@@ -145,7 +142,12 @@ public class FlockerHead : MonoBehaviour
         }
     }
 
-   public void ApplyRules()
+    void MoveAgent()
+    {
+        transform.Translate(0, 0, Time.deltaTime * speed);
+    }
+
+    public void ApplyRules()
     {
         GameObject[] gos;
         gos = flockManager.GetComponent<FollowFlock>().allFlock; 
