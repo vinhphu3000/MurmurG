@@ -53,7 +53,7 @@ public class FlockerHead : MonoBehaviour
     public void changeMaterial()
     {
         gameObject.GetComponent<Renderer>().sharedMaterial.color = Color.red;
-        Debug.Log("Change Material has been triggered to Red");
+    //    Debug.Log("Change Material has been triggered to Red");
 
     }
 
