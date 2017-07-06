@@ -3,9 +3,11 @@
 
          _Color ("Color", Color) = (1,1,1,1)
          _MainTex ("Albedo (RGB)", 2D) = "white" {}
-         _Glossiness ("Smoothness", Range(0,1)) = 0.5
-         _Metallic ("Metallic", Range(0,1)) = 0.0
-         _Amount ("Amount", Range(-100,100)) = 1.0
+		 _Glossiness("Smoothness", Range(0,1)) = 0.5
+		 _Metallic("Metallic", Range(0,1)) = 0.0
+		 _Amount("Amount", Range(-100,100)) = 1.0
+
+		 _VertexAnimOffset("VertexAnimOffset", Range(-100,100)) = 1.0
          _WaveValueX1 ("WaveValueX1", Range(-100,100)) = 1.0
          _WaveValueX2 ("WaveValueX2", Range(-100,100)) = 1.0
          _WaveValueX3 ("WaveValueX3", Range(-100,100)) = 1.0
@@ -49,6 +51,8 @@
          fixed4 _Color;
          float _Amount;
 
+		 float _VertexAnimOffset;
+		 float totalOffset;
          float _WaveValueX1;
          float _WaveValueX2;
          float _WaveValueX3;
@@ -86,26 +90,27 @@
            //  v.vertex.y += _Amount * abs(sin(_Time * 200)) * v.color.y;
 
            //Fat Mesh
+		  totalOffset = _Time + _VertexAnimOffset;
           v.vertex.xyz += v.normal * _FatValue1;
 
            //Wave Mesh
         //   v.vertex.x += sin((v.vertex.y + _Time * _Value3 ) * _Value2 ) * _Value1;
      //   v.vertex.x += sin((v.vertex.x + _Time * _Value3 ) * _Value2 ) * _Value1;
     //     v.vertex.y += sin((v.vertex.y + _Time * _Value3 ) * _Value2 ) * _Value1;
-
+		 
 			 // X Axis Sin Wave Deformation
-         v.vertex.z += sin((v.vertex.z + _Time * _WaveValueX3 ) * _WaveValueX2 ) * _WaveValueX1;
+         v.vertex.z += sin((v.vertex.z + totalOffset * _WaveValueX3 ) * _WaveValueX2 ) * _WaveValueX1;
 
 
 		 // Y Axis Sin Wave Deformation
-		 v.vertex.z += sin((v.vertex.z + _Time * _WaveValueY3) * _WaveValueY2) * _WaveValueY1;
+		 v.vertex.z += sin((v.vertex.z + totalOffset * _WaveValueY3) * _WaveValueY2) * _WaveValueY1;
 
 
 		 // Z Axis Sin Wave Deformation
-		 v.vertex.z += sin((v.vertex.z + _Time * _WaveValueZ3) * _WaveValueZ2) * _WaveValueZ1;
+		 v.vertex.z += sin((v.vertex.z + totalOffset * _WaveValueZ3) * _WaveValueZ2) * _WaveValueZ1;
 
        //Bubbling Mesh
-       v.vertex.xyz += v.normal * ( sin((v.vertex.x + _Time * _BubbleValue3) * _BubbleValue2) + cos((v.vertex.z + _Time* _BubbleValue3) * _BubbleValue2)) * _BubbleValue1;
+       v.vertex.xyz += v.normal * ( sin((v.vertex.x + totalOffset * _BubbleValue3) * _BubbleValue2) + cos((v.vertex.z + totalOffset* _BubbleValue3) * _BubbleValue2)) * _BubbleValue1;
 
          }
  

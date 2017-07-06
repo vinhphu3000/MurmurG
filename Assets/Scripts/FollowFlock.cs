@@ -35,8 +35,10 @@ public class FollowFlock : MonoBehaviour
 
     Vector3 npcDirection;
     float angle;
+    // public Material material;
+    // public float vertexAnimOffset;
 
- 
+
     // Use this for initialization
     void Start()
     {
@@ -49,6 +51,9 @@ public class FollowFlock : MonoBehaviour
                 Random.Range(transform.position.y - tankSize, transform.position.y + tankSize), 
                 Random.Range(transform.position.z - tankSize, transform.position.z + tankSize));
             allFlock[i] = (GameObject)Instantiate(flockPrefab, pos, Quaternion.identity);
+
+          // vertexAnimOffset = Random.Range(0, 10);
+          // material.SetFloat("_VertexAnimOffset", vertexAnimOffset);
         }
     }
 
