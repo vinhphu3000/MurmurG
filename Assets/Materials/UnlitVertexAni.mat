@@ -11,6 +11,7 @@ Material:
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
@@ -60,29 +61,32 @@ Material:
     m_Floats:
     - _Alpha: 1
     - _Amount: 0
-    - _Brightness: 1.86
+    - _Brightness: 1.43
     - _BumpScale: 1
+    - _ColorWriteMask: 15
+    - _Cull: 2
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
-    - _DstBlend: 0
+    - _DstBlend: 2
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
-    - _Iridecence: 0.02
+    - _Iridecence: 0
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _ReflectionAmount: 0.87
+    - _ReflectionAmount: 0.82
     - _ReflectionBlur: 0
-    - _Side_Brightness: 1
+    - _Side_Brightness: 0.05
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
-    - _SrcBlend: 1
+    - _SrcBlend: 3
     - _UVSec: 0
-    - _Value1: 4
-    - _Value2: 3
-    - _Value3: 3
+    - _Value1: 0
+    - _Value2: 0
+    - _Value3: 0
+    - _ZTest: 4
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}

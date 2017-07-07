@@ -36,7 +36,7 @@ public class FollowFlock : MonoBehaviour
     Vector3 npcDirection;
     float angle;
     // public Material material;
-    // public float vertexAnimOffset;
+     public float vertexAnimOffset;
 
 
     // Use this for initialization
@@ -52,8 +52,8 @@ public class FollowFlock : MonoBehaviour
                 Random.Range(transform.position.z - tankSize, transform.position.z + tankSize));
             allFlock[i] = (GameObject)Instantiate(flockPrefab, pos, Quaternion.identity);
 
-          // vertexAnimOffset = Random.Range(0, 10);
-          // material.SetFloat("_VertexAnimOffset", vertexAnimOffset);
+          vertexAnimOffset = Random.Range(0, 10);
+          allFlock[i].GetComponent<Renderer>().material.SetFloat("_VertexAnimOffset", vertexAnimOffset);
         }
     }
 
@@ -97,14 +97,23 @@ public class FollowFlock : MonoBehaviour
                     anim.SetBool("isIdle", false);
                     anim.SetBool("isWalking", true);
                     anim.SetBool("isAttacking", false);
-                    flockPrefab.GetComponent<Renderer>().sharedMaterial.color = Color.green;
+                    // flockPrefab.GetComponent<Renderer>().sharedMaterial.color = Color.green;
+                    for (int i = 0; i < numFlock; i++)
+                    {
+                        allFlock[i].GetComponent<Renderer>().material.color = Color.green;
+                    }
+
                     activeFlockState = FlockState.PATROL;
                 }
                 break;
 
             case NpcState.PURSUE:
                 {
-                    flockPrefab.GetComponent<Renderer>().sharedMaterial.color = Color.yellow;
+                   // flockPrefab.GetComponent<Renderer>().sharedMaterial.color = Color.yellow;
+                    for (int i = 0; i < numFlock; i++)
+                    {
+                        allFlock[i].GetComponent<Renderer>().material.color = Color.yellow;
+                    }
 
                     goalPrefab.transform.rotation
                         = Quaternion.Slerp(goalPrefab.transform.rotation,
@@ -121,7 +130,11 @@ public class FollowFlock : MonoBehaviour
                 {
                     anim.SetBool("isAttacking", true);
                     anim.SetBool("isWalking", false);
-                    flockPrefab.GetComponent<FlockerHead>().changeMaterial();
+                    //   flockPrefab.GetComponent<FlockerHead>().changeMaterial();
+                    for (int i = 0; i < numFlock; i++)
+                    {
+                        allFlock[i].GetComponent<Renderer>().material.color = Color.red;
+                    }
                     activeFlockState = FlockState.ATTACK;
                 }
                 break;

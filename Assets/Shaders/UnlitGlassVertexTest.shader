@@ -14,20 +14,36 @@ Shader "Custom/UnlitGlassVertexTest"
 		_Reflection_Tint("Reflection Tint, Alpha", Color) = (1, 1, 1, 1)
 		_Iridecence("Iridecence Amount", Range(0.0, 1.0)) = 0.02
 		_Alpha("Alpha", Range(0.0, 1.0)) = 1.0
-		  _Amount ("Amount", Range(-100,100)) = 1.0
          _Value1 ("Value1", Range(-100,100)) = 1.0
          _Value2 ("Value2", Range(-100,100)) = 1.0
          _Value3 ("Value3", Range(-100,100)) = 1.0
+
+			[Header(Blend State)]
+		[Enum(UnityEngine.Rendering.BlendMode)] _SrcBlend("SrcBlend", Float) = 1 //"One"
+			[Enum(UnityEngine.Rendering.BlendMode)] _DstBlend("DestBlend", Float) = 0 //"Zero"
+			[Space(20)]
+
+		[Header(Other)]
+		[Enum(UnityEngine.Rendering.CullMode)] _Cull("Cull", Float) = 2 //"Back"
+			[Enum(UnityEngine.Rendering.CompareFunction)] _ZTest("ZTest", Float) = 4 //"LessEqual"
+			[Enum(Off,0,On,1)] _ZWrite("ZWrite", Float) = 1.0 //"On"
+			[Enum(UnityEngine.Rendering.ColorWriteMask)] _ColorWriteMask("ColorWriteMask", Float) = 15 //"All"
 	}
 	SubShader
 	{
-		Tags{ "RenderType" = "Opaque" }
+		Tags{ "RenderType" = "Transparent" "Queue" = "Transparent" "PerformanceChecks" = "False" }
 		pass
 		{
 			Fog{ Mode Off }
 			Lighting Off
 			ZWrite On
-						Cull Off
+			Cull Off
+				LOD 100
+				Blend[_SrcBlend][_DstBlend]
+				ZTest[_ZTest]
+				ZWrite[_ZWrite]
+				Cull[_Cull]
+				ColorMask[_ColorWriteMask]
 
 			CGPROGRAM
 			#pragma vertex vert fullforwardshadows

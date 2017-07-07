@@ -13,6 +13,7 @@ Material:
     SHOWDEBUG_OFF TINT_OFF VERTCOLOR_OFF _FOG_OFF _USECOLOR_ON _USEMAINTEX_ON
   m_LightmapFlags: 6
   m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
   m_CustomRenderQueue: 2000
   stringTagMap: {}
   disabledShaderPasses: []
@@ -100,7 +101,7 @@ Material:
     - _Alpha: 1
     - _AlphaTestThreshold: 0.05
     - _Amount: -6
-    - _Brightness: 1.34
+    - _Brightness: 1.5
     - _BumpScale: 1
     - _COLORMASK: 15
     - _CULL: 2
@@ -115,7 +116,7 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
-    - _Iridecence: 0.041
+    - _Iridecence: 0
     - _LightProbeAmount: 1
     - _Metallic: 0.911
     - _Mode: 0
@@ -126,10 +127,10 @@ Material:
     - _Parallax: 0.02
     - _Pow: 0.8
     - _Ref: 0.1
-    - _ReflectionAmount: 1.02
-    - _ReflectionBlur: 0.59
+    - _ReflectionAmount: 0.86
+    - _ReflectionBlur: 0
     - _ShowDebugValue: 0
-    - _Side_Brightness: 0.387
+    - _Side_Brightness: 0.52
     - _SmoothnessTextureChannel: 0
     - _Specular: 0.5
     - _SpecularHighlights: 1
@@ -160,7 +161,7 @@ Material:
     - _FresnelScale: {r: 1, g: 1, b: 0, a: 0}
     - _Light_Dir: {r: 0.5, g: -1, b: 0, a: 10}
     - _LightmapParams: {r: 1, g: 0, b: 0, a: 0}
-    - _Material_Color: {r: 0.2, g: 0.2, b: 0.2, a: 1}
+    - _Material_Color: {r: 0.4852941, g: 0.4852941, b: 0.4852941, a: 1}
     - _NearClipDistance: {r: 0.2, g: 1, b: 0, a: 0}
     - _NormalAlphaScale: {r: 1, g: 0, b: 0, a: 0}
     - _NormalScale: {r: 1, g: 1, b: 1, a: 0}

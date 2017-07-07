@@ -125,18 +125,21 @@ public class FlockerHead : MonoBehaviour
             case FlockState.PATROL:
                 {
                     if (Random.Range(0, 10) < 1) ApplyRules();
+                 //   Debug.Log("state is patrol");
                 }
                 break;
 
             case FlockState.PURSUE:
                 {
                     if (Random.Range(0, 4) < 1) ApplyRules();
+                //    Debug.Log("state is pursue");
                 }
                 break;
 
             case FlockState.ATTACK:
                 {
                     ApplyRules();
+                  //  Debug.Log("state is attack");
                 }
                 break;
         }

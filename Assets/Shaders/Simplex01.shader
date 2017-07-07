@@ -232,7 +232,7 @@ Shader "Noise/Simplex01"
 		CGPROGRAM
 		#pragma surface surf Lambert vertex:vert
 		#pragma glsl
-		#pragma target 3.0
+		#pragma target 5.0
 		
 		fixed _Octaves;
 		float _Frequency;
