@@ -14,9 +14,15 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Plugins/Catlike Coding/NumberFlow/Examples/Terrain/Terrain.unity
     guid: e12390c73f4624cf49d154d16bc13552
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Murmur02.unity
     guid: 7068aa46111926244bec7538ea7f0ed8
+  - enabled: 1
+    path: Assets/Scenes/MiddleFork.unity
+    guid: 0ebb1b55725235f4b9a2a78e5d45e6ed
+  - enabled: 1
+    path: Assets/Scenes/Flocks.unity
+    guid: cce42f9ca25decb469c22a1985e280a8
   - enabled: 0
     path: Assets/HoloToolkit-Tests/Sharing/Scenes/RoomAndAnchorTest.unity
     guid: ce35045e930c3b442881305966b17fee
@@ -50,12 +56,6 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/HoloToolkit-Tests/Input/Scenes/InputManagerTest.unity
     guid: bbb7f726308ba4b4e8ef592af9332ab4
-  - enabled: 0
-    path: Assets/Scenes/MiddleFork.unity
-    guid: 0ebb1b55725235f4b9a2a78e5d45e6ed
-  - enabled: 1
-    path: Assets/Scenes/Flocks.unity
-    guid: cce42f9ca25decb469c22a1985e280a8
   - enabled: 0
     path: Assets/HoloToolkit-Examples/InteractiveElements/Scenes/GestureInteractiveExample.unity
     guid: 129aec1ffadcd134791d142340881afb

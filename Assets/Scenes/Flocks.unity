@@ -3745,7 +3745,7 @@ MonoBehaviour:
   flockPrefab: {fileID: 1482643832869528, guid: 20bd45cff10d7c446860dccb03234260,
     type: 2}
   tankSize: 3
-  numFlock: 50
+  numFlock: 25
   allFlock: []
   minSpeed: 0.05
   maxSpeed: 0.4
