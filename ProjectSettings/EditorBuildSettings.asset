@@ -14,13 +14,13 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Plugins/Catlike Coding/NumberFlow/Examples/Terrain/Terrain.unity
     guid: e12390c73f4624cf49d154d16bc13552
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Murmur02.unity
     guid: 7068aa46111926244bec7538ea7f0ed8
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/MiddleFork.unity
     guid: 0ebb1b55725235f4b9a2a78e5d45e6ed
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Flocks.unity
     guid: cce42f9ca25decb469c22a1985e280a8
   - enabled: 0
@@ -92,3 +92,6 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/HoloToolkit-Examples/SavingSpatialMeshes/SaveSpatialUnderstanding.unity
     guid: 8d26b343ca0a41443aeaaf0796b6703d
+  - enabled: 1
+    path: Assets/Scenes/MurmurArtFair.unity
+    guid: 62d7e8c366f432d46a02b37c79eaf179

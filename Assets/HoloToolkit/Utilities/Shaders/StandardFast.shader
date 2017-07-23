@@ -73,6 +73,7 @@ Shader "HoloToolkit/StandardFast"
     {
         Tags { "RenderType" = "Opaque" "PerformanceChecks" = "False" }
         LOD 300
+			Cull Off
 
         // ------------------------------------------------------------------
         //  Base forward pass (directional light, emission, lightmaps, ...)
