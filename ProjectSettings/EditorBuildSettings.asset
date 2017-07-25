@@ -92,6 +92,9 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/HoloToolkit-Examples/SavingSpatialMeshes/SaveSpatialUnderstanding.unity
     guid: 8d26b343ca0a41443aeaaf0796b6703d
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/MurmurArtFair.unity
     guid: 62d7e8c366f432d46a02b37c79eaf179
+  - enabled: 1
+    path: Assets/Scenes/ArtFairMaster.unity
+    guid: 87a2767dcd9496442aa844fd3c3da46a

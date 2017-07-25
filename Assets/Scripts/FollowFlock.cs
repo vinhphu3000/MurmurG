@@ -102,7 +102,6 @@ public class FollowFlock : MonoBehaviour
                     {
                         allFlock[i].GetComponent<Renderer>().material.color = Color.green;
                     }
-
                     activeFlockState = FlockState.PATROL;
                 }
                 break;
