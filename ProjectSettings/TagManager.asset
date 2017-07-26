@@ -8,6 +8,8 @@ TagManager:
   - target
   - ammo_gun
   - Light
+  - Tip
+  - wavesource
   layers:
   - Default
   - TransparentFX

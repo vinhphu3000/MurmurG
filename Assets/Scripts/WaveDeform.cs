@@ -5,7 +5,7 @@ using UnityEngine;
 public class WaveDeform : MonoBehaviour {
 
     public float waveHeight = 0.31f;
-    public float speed = 1.18f;
+    public float waveSpeed = 1.18f;
     public float waveLength = 2f;
     public float noiseStrength = 0f;
     public float noiseWalk = 1f;
@@ -75,7 +75,7 @@ public class WaveDeform : MonoBehaviour {
         {
             Vector3 vertex = baseHeight[i];
             Random.InitState((int)((vertex.x + noiseOffset) * (vertex.x + noiseOffset) + (vertex.z + noiseOffset) * (vertex.z + noiseOffset)));
-            vertex.y += Mathf.Sin(Time.time * speed + baseHeight[i].x * waveLength + baseHeight[i].y * waveLength) * waveHeight;
+            vertex.y += Mathf.Sin(Time.time * waveSpeed + baseHeight[i].x * waveLength + baseHeight[i].y * waveLength) * waveHeight;
             vertex.y += Mathf.Sin(Mathf.Cos(Random.value * 1.0f) * randomHeight * Mathf.Cos(Time.time * randomSpeed * Mathf.Sin(Random.value * 1.0f)));
             //vertex.y += Mathf.PerlinNoise(baseHeight[i].x + Mathf.Cos(Time.time * 0.1f) + noiseWalk, baseHeight[i].y + Mathf.Sin(Time.time * 0.1f)) * noiseStrength;
             vertices[i] = vertex;

@@ -10,6 +10,7 @@ public class FollowFlock : MonoBehaviour
     [Header("Flock Manager")]
     public GameObject flockPrefab;
     public float tankSize = 5;
+   // public float tankSizeY = 2;
     public int numFlock = 20;
     public GameObject[] allFlock;
     public static Vector3 goalPos = Vector3.zero;
@@ -28,7 +29,7 @@ public class FollowFlock : MonoBehaviour
     public NpcState activeNpcState = NpcState.PATROL;
     Animator anim;
     public float rotSpeed = 0.2f;
-    public float speed = 1.5f;
+    public float npcSpeed = 1.5f;
     public float npcViewRange;
     public float npcViewAngle;
     public float npcEngageMagnitude;
@@ -43,7 +44,6 @@ public class FollowFlock : MonoBehaviour
     void Start()
     {
         anim = goalPrefab.GetComponent<Animator>();
-
         allFlock = new GameObject[numFlock];
         for (int i = 0; i < numFlock; i++)
         {
@@ -97,6 +97,8 @@ public class FollowFlock : MonoBehaviour
                     anim.SetBool("isIdle", false);
                     anim.SetBool("isWalking", true);
                     anim.SetBool("isAttacking", false);
+                    if (Random.Range(0, 10000) < 50) RandomGoal();
+
                     // flockPrefab.GetComponent<Renderer>().sharedMaterial.color = Color.green;
                     for (int i = 0; i < numFlock; i++)
                     {
@@ -118,9 +120,10 @@ public class FollowFlock : MonoBehaviour
                         = Quaternion.Slerp(goalPrefab.transform.rotation,
                         Quaternion.LookRotation(npcDirection), rotSpeed * Time.deltaTime);
 
-                    goalPrefab.transform.Translate(0, 0, Time.deltaTime * speed);
+                    goalPrefab.transform.Translate(0, 0, Time.deltaTime * npcSpeed);
                     anim.SetBool("isWalking", true);
                     anim.SetBool("isAttacking", false);
+                   // RandomGoal();
                     activeFlockState = FlockState.PURSUE;
                 }
                 break;
@@ -196,7 +199,7 @@ public class FollowFlock : MonoBehaviour
                     {
                         allFlock[i].GetComponent<FlockerHead>().activeFlockState = FlockerHead.FlockState.PATROL;
                     }
-                    if (Random.Range(0, 10000) < 50) RandomGoal();
+                  //  if (Random.Range(0, 10000) < 50) RandomGoal();
                 }
                 break;
 
@@ -234,6 +237,7 @@ public class FollowFlock : MonoBehaviour
             Random.Range(-1.5f, transform.position.y + tankSize),
             Random.Range(transform.position.z - tankSize, transform.position.z + tankSize));
         goalPrefab.transform.position = goalPos;
+        Debug.Log("random goal");
     }
 
     void OnDrawGizmos()
