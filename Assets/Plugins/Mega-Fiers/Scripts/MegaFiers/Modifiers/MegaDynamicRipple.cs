@@ -38,7 +38,9 @@ public class MegaDynamicRipple : MegaModifier
 	public Texture2D	obTexture;
 	Collider mycollider;
 
-	[ContextMenu("Reset Sim")]
+    bool activeInput = true;
+
+    [ContextMenu("Reset Sim")]
 	public void ResetGrid()
 	{
 		Setup();
@@ -519,12 +521,15 @@ public class MegaDynamicRipple : MegaModifier
 
 	void checkInput()
 	{
-		if ( Input.GetMouseButton(0) )
+        
+		//if ( Input.GetMouseButton(0) )
+        if (activeInput)
 		{
 			RaycastHit[] hits;
-
-			hits = Physics.RaycastAll(Camera.main.ScreenPointToRay(Input.mousePosition));
-			for ( int i = 0; i < hits.Length; i++ )
+           // GameObject caster = GameObject.Find("HololensCamera");
+            //hits = Physics.RaycastAll(Camera.main.ScreenPointToRay(Input.mousePosition));
+            hits = Physics.RaycastAll(Camera.main.transform.position, -Vector3.up, 100.0f);
+            for ( int i = 0; i < hits.Length; i++ )
 			{
 				if ( hits[i].collider.gameObject == gameObject )
 				{
@@ -603,10 +608,15 @@ public class MegaDynamicRipple : MegaModifier
 
 	void checkInput1()
 	{
-		if ( Input.GetMouseButton(0) )
-		{
+     //   GameObject targetObject = GameObject.Find("HololensCamera");
+
+       // Vector3 forward = transform.TransformDirection(Vector3.forward) * 10;
+		//if ( Input.GetMouseButton(0) )
+		//{
 			RaycastHit hit;
-			if ( Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit) )
+			//if ( Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit) )
+            //if(Physics.Raycast(transform.position, -Vector3.up, out hit))
+            if(Physics.Raycast(Camera.main.transform.position, -Vector3.up, out hit))
 			{
 				if ( hit.collider.gameObject != gameObject )
 					return;
@@ -623,9 +633,9 @@ public class MegaDynamicRipple : MegaModifier
 				lastrow = row;
 				lastcol = column;
 			}
-		}
-		else
-			lastdown = false;
+		//}
+		//else
+		//	lastdown = false;
 	}
 
 	void Line(float x0, float y0, float x1, float y1)
