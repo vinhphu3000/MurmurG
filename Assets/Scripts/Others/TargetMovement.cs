@@ -30,7 +30,7 @@ public class TargetMovement : MonoBehaviour
 	void Update () 
     {
         transform.Translate(Vector3.forward * speed * Time.deltaTime);
-        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(nextMovementPoint - transform.position), 1.0f * Time.deltaTime);
+        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(nextMovementPoint - transform.position), 4.0f * Time.deltaTime);
 
         if(Vector3.Distance(nextMovementPoint, transform.position) <= 10.0f)
             CalculateNextMovementPoint();
