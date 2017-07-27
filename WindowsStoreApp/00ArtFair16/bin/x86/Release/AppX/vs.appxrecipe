@@ -20,6 +20,12 @@
     <WindowsSdkPath>C:\Program Files %28x86%29\Windows Kits\10\</WindowsSdkPath>
     <LayoutDir>C:\Users\reillydonovan\Documents\GitHub\MurmurG\WindowsStoreApp\00ArtFair16\bin\x86\Release\AppX</LayoutDir>
     <RegisteredManifestChecksum>ED6EAE03D84B079ACA7A99796DD3AA9FDCF9E37E5DE9F2A20A3C6B14A815C19B</RegisteredManifestChecksum>
+    <RegisteredPackageMoniker>00ArtFair16_1.0.0.0_x86__pzq3xp76mxafg</RegisteredPackageMoniker>
+    <RegisteredUserModeAppID>00ArtFair16_pzq3xp76mxafg!App</RegisteredUserModeAppID>
+    <RegisteredPackageID>00ArtFair16</RegisteredPackageID>
+    <RegisteredPackagePublisher>CN=DefaultCompany</RegisteredPackagePublisher>
+    <RegisteredVersion>1.0.0.0</RegisteredVersion>
+    <JitOptimizationSuppressed>False</JitOptimizationSuppressed>
   </PropertyGroup>
   <ItemGroup>
     <AppXManifest Include="C:\Users\reillydonovan\Documents\GitHub\MurmurG\WindowsStoreApp\00ArtFair16\bin\x86\Release\Core\AppxManifest.xml">
