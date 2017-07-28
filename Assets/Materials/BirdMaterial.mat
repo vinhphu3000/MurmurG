@@ -93,8 +93,8 @@ Material:
     - _WaveValueX2: 0
     - _WaveValueX3: 0
     - _WaveValueY1: 1
-    - _WaveValueY2: 10
-    - _WaveValueY3: 10
+    - _WaveValueY2: 20
+    - _WaveValueY3: 20
     - _WaveValueZ1: 0
     - _WaveValueZ2: 0
     - _WaveValueZ3: 0

@@ -58808,7 +58808,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bound: {x: 20, y: 20, z: 20}
-  speed: 2
+  speed: 6
 --- !u!114 &1435157757
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60431,7 +60431,7 @@ MonoBehaviour:
   head: {fileID: 1529212607}
   activeNpcState: 0
   rotSpeed: 4
-  npcSpeed: 1.5
+  npcSpeed: 4
   npcViewRange: 20
   npcViewAngle: 360
   npcEngageMagnitude: 0.5
