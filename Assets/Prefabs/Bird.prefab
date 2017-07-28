@@ -37,9 +37,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1482643832869528}
-  m_LocalRotation: {x: 0.048861332, y: -0.9234056, z: 0.12553927, w: 0.35940862}
-  m_LocalPosition: {x: 11.176728, y: 2.530135, z: 7.1783676}
-  m_LocalScale: {x: 0.1, y: 0.05, z: 0.2}
+  m_LocalRotation: {x: 0.048861336, y: -0.9234056, z: 0.12553929, w: 0.35940862}
+  m_LocalPosition: {x: 11.176728, y: -1.4698651, z: 7.1783676}
+  m_LocalScale: {x: 0.09999998, y: 0.05, z: 0.19999993}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -57,7 +57,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: d6839f52622f3a44da9f4c38c00d96d2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -82,7 +82,7 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1482643832869528}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!65 &65614818065759220
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -183,6 +183,7 @@ TrailRenderer:
     numCapVertices: 0
     alignment: 0
     textureMode: 0
+    generateLightingData: 0
   m_MinVertexDistance: 0.1
   m_Autodestruct: 0
 --- !u!114 &114557633905095410
@@ -199,7 +200,7 @@ MonoBehaviour:
   speed: 1
   rotationSpeed: 3
   neighborDistance: 3
-  attack: 0
-  engage: 0
-  bird: 0
-  insect: 0
+  activeFlockType: 0
+  activeFlockState: 0
+  minSpeedRange: 0
+  maxSpeedRange: 0

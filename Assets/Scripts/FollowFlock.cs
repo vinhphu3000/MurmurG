@@ -100,22 +100,25 @@ public class FollowFlock : MonoBehaviour
                     if (Random.Range(0, 10000) < 50) RandomGoal();
 
                     // flockPrefab.GetComponent<Renderer>().sharedMaterial.color = Color.green;
+                    /*
                     for (int i = 0; i < numFlock; i++)
                     {
                         allFlock[i].GetComponent<Renderer>().material.color = Color.green;
                     }
+                    */
                     activeFlockState = FlockState.PATROL;
                 }
                 break;
 
             case NpcState.PURSUE:
                 {
-                   // flockPrefab.GetComponent<Renderer>().sharedMaterial.color = Color.yellow;
+                    // flockPrefab.GetComponent<Renderer>().sharedMaterial.color = Color.yellow;
+                    /*
                     for (int i = 0; i < numFlock; i++)
                     {
                         allFlock[i].GetComponent<Renderer>().material.color = Color.yellow;
                     }
-
+                    */
                     goalPrefab.transform.rotation
                         = Quaternion.Slerp(goalPrefab.transform.rotation,
                         Quaternion.LookRotation(npcDirection), rotSpeed * Time.deltaTime);
@@ -133,10 +136,12 @@ public class FollowFlock : MonoBehaviour
                     anim.SetBool("isAttacking", true);
                     anim.SetBool("isWalking", false);
                     //   flockPrefab.GetComponent<FlockerHead>().changeMaterial();
+                    /*
                     for (int i = 0; i < numFlock; i++)
                     {
                         allFlock[i].GetComponent<Renderer>().material.color = Color.red;
                     }
+                    */
                     activeFlockState = FlockState.ATTACK;
                 }
                 break;
