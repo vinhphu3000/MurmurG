@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 33521013462017994}
   - component: {fileID: 135051261441666966}
   - component: {fileID: 23500934598476950}
-  - component: {fileID: 114353675404658528}
+  - component: {fileID: 114830649348458152}
   m_Layer: 0
   m_Name: Tadpole
   m_TagString: Untagged
@@ -82,7 +82,7 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1482643832869528}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &114353675404658528
+--- !u!114 &114830649348458152
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -90,16 +90,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 1482643832869528}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7649f7c9cecac1c48a72e49c3b5948ce, type: 3}
+  m_Script: {fileID: 11500000, guid: 63e5e002fa8112044bb2045d54a5c25d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
   rotationSpeed: 3
   neighborDistance: 3
-  activeFlockType: 0
+  activeFlockType: 2
   activeFlockState: 0
-  minSpeedRange: 0
-  maxSpeedRange: 0
+  minSpeedRange: 0.1
+  maxSpeedRange: 1
 --- !u!135 &135051261441666966
 SphereCollider:
   m_ObjectHideFlags: 1

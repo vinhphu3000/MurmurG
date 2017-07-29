@@ -2799,8 +2799,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 35, z: 35.020004}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1941167112}
   - {fileID: 694373673}
+  - {fileID: 1941167112}
   - {fileID: 1905480750}
   m_Father: {fileID: 0}
   m_RootOrder: 3
@@ -4168,7 +4168,7 @@ Transform:
   - {fileID: 2083434894}
   - {fileID: 164138007}
   m_Father: {fileID: 455669032}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &694373674
 MonoBehaviour:
@@ -4178,18 +4178,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 694373672}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 734ade469fd23fa4b89b0d4aaa61dede, type: 3}
+  m_Script: {fileID: 11500000, guid: 611c157c9de5e334395ca64aeda7d91f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   flockPrefab: {fileID: 1482643832869528, guid: 20bd45cff10d7c446860dccb03234260,
     type: 2}
   tankSize: 2.5
+  tankScale: 1
   numFlock: 25
   allFlock: []
-  minSpeed: 0.05
-  maxSpeed: 0.4
-  agentSpeed: 0.3
-  agentRotation: 1
+  minSpeed: 0.1
+  maxSpeed: 1
+  minScale: 0.2
+  maxScale: 1
+  agentSpeed: 1
+  agentRotation: 3
   agentNeighborDistance: 3
   activeFlockType: 2
   activeFlockState: 0
@@ -58081,7 +58084,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1362457774
 Transform:
   m_ObjectHideFlags: 0
@@ -60417,12 +60420,15 @@ MonoBehaviour:
   flockPrefab: {fileID: 1482643832869528, guid: 483857ca66c810742b89d3cc04343b4d,
     type: 2}
   tankSize: 10
+  tankScale: 1
   numFlock: 50
   allFlock: []
   minSpeed: 1
-  maxSpeed: 4
-  agentSpeed: 3
-  agentRotation: 2
+  maxSpeed: 6
+  minScale: 0.5
+  maxScale: 1
+  agentSpeed: 5
+  agentRotation: 4
   agentNeighborDistance: 20
   activeFlockType: 0
   activeFlockState: 0
@@ -62013,7 +62019,7 @@ Transform:
   - {fileID: 1670389127}
   - {fileID: 1362457774}
   m_Father: {fileID: 455669032}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1945748831 stripped
 Transform:

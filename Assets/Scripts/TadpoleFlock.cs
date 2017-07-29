@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FollowFlock : MonoBehaviour
+public class TadpoleFlock : MonoBehaviour
 {
     public enum FlockType { BIRD, INSECT, TADPOLE };
     public enum NpcState { PATROL, PURSUE, ATTACK };
@@ -163,7 +163,7 @@ public class FollowFlock : MonoBehaviour
                 {
                     for (int i = 0; i < numFlock; i++)
                     {
-                        allFlock[i].GetComponent<FlockerHead>().activeFlockType = FlockerHead.FlockType.BIRD;
+                        allFlock[i].GetComponent<TadpoleHead>().activeFlockType = TadpoleHead.FlockType.BIRD;
                     }
                 }
                 break;
@@ -172,7 +172,7 @@ public class FollowFlock : MonoBehaviour
                 {
                     for (int i = 0; i < numFlock; i++)
                     {
-                        allFlock[i].GetComponent<FlockerHead>().activeFlockType = FlockerHead.FlockType.INSECT;
+                        allFlock[i].GetComponent<TadpoleHead>().activeFlockType = TadpoleHead.FlockType.INSECT;
                     }
                 }
                 break;
@@ -181,7 +181,7 @@ public class FollowFlock : MonoBehaviour
                 {
                     for (int i = 0; i < numFlock; i++)
                     {
-                        allFlock[i].GetComponent<FlockerHead>().activeFlockType = FlockerHead.FlockType.TADPOLE;
+                        allFlock[i].GetComponent<TadpoleHead>().activeFlockType = TadpoleHead.FlockType.TADPOLE;
                     }
                 }
 
@@ -207,7 +207,7 @@ public class FollowFlock : MonoBehaviour
 
                     for (int i = 0; i < numFlock; i++)
                     {
-                        allFlock[i].GetComponent<FlockerHead>().activeFlockState = FlockerHead.FlockState.PATROL;
+                        allFlock[i].GetComponent<TadpoleHead>().activeFlockState = TadpoleHead.FlockState.PATROL;
                     }
                   //  if (Random.Range(0, 10000) < 50) RandomGoal();
                 }
@@ -219,7 +219,7 @@ public class FollowFlock : MonoBehaviour
 
                     for (int i = 0; i < numFlock; i++)
                     {
-                        allFlock[i].GetComponent<FlockerHead>().activeFlockState = FlockerHead.FlockState.PURSUE;
+                        allFlock[i].GetComponent<TadpoleHead>().activeFlockState = TadpoleHead.FlockState.PURSUE;
                     }
                 }
                 break;
@@ -229,7 +229,7 @@ public class FollowFlock : MonoBehaviour
                     goalPos = goalPrefab.transform.position;
                     for (int i = 0; i < numFlock; i++)
                     {
-                        allFlock[i].GetComponent<FlockerHead>().activeFlockState = FlockerHead.FlockState.ATTACK;
+                        allFlock[i].GetComponent<TadpoleHead>().activeFlockState = TadpoleHead.FlockState.ATTACK;
                     }
 
                 }
