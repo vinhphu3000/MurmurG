@@ -21,6 +21,7 @@ public class TadpoleHead : MonoBehaviour
 
     public float minSpeedRange;
     public float maxSpeedRange;
+    public float gSpeedChange;
     string manager;
     GameObject flockManager;
     // Use this for initialization
@@ -28,7 +29,7 @@ public class TadpoleHead : MonoBehaviour
     void Start()
     {
 
-        speed = Random.Range(0.5f, 1f);
+        speed = Random.Range(minSpeedRange, maxSpeedRange);
     }
 
     // Update is called once per frame
@@ -107,6 +108,7 @@ public class TadpoleHead : MonoBehaviour
         neighborDistance = flockManager.GetComponent<TadpoleFlock>().agentNeighborDistance;
         minSpeedRange = flockManager.GetComponent<TadpoleFlock>().minSpeed;
         maxSpeedRange = flockManager.GetComponent<TadpoleFlock>().maxSpeed;
+        gSpeedChange = flockManager.GetComponent<TadpoleFlock>().gSpeedChange;
     }
 
     void ChangeDirection()
@@ -178,7 +180,7 @@ public class TadpoleHead : MonoBehaviour
 
         Vector3 vCenter = Vector3.zero;
         Vector3 vAvoid = Vector3.zero;
-        float gSpeed = 0.1f;
+        float gSpeed = gSpeedChange;
 
         Vector3 goalPos = TadpoleFlock.goalPos;
 

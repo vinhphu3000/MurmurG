@@ -16,6 +16,7 @@ public class TadpoleFlock : MonoBehaviour
     public static Vector3 goalPos = Vector3.zero;
     public float minSpeed;
     public float maxSpeed;
+    public float gSpeedChange;
     public float minScale;
     public float maxScale;
     public float agentSpeed;
