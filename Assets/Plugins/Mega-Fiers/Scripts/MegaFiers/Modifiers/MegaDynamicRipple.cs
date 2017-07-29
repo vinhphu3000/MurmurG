@@ -527,8 +527,8 @@ public class MegaDynamicRipple : MegaModifier
 		{
 			RaycastHit[] hits;
            // GameObject caster = GameObject.Find("HololensCamera");
-            //hits = Physics.RaycastAll(Camera.main.ScreenPointToRay(Input.mousePosition));
-            hits = Physics.RaycastAll(Camera.main.transform.position, -Vector3.up, 100.0f);
+            hits = Physics.RaycastAll(Camera.main.ScreenPointToRay(Input.mousePosition));
+         // this works  hits = Physics.RaycastAll(Camera.main.transform.position, -Vector3.up, 100.0f);
             for ( int i = 0; i < hits.Length; i++ )
 			{
 				if ( hits[i].collider.gameObject == gameObject )
@@ -614,9 +614,9 @@ public class MegaDynamicRipple : MegaModifier
 		//if ( Input.GetMouseButton(0) )
 		//{
 			RaycastHit hit;
-			//if ( Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit) )
+			if ( Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit) )
             //if(Physics.Raycast(transform.position, -Vector3.up, out hit))
-            if(Physics.Raycast(Camera.main.transform.position, -Vector3.up, out hit))
+        //this works    if(Physics.Raycast(Camera.main.transform.position, -Vector3.up, out hit))
 			{
 				if ( hit.collider.gameObject != gameObject )
 					return;
@@ -634,8 +634,8 @@ public class MegaDynamicRipple : MegaModifier
 				lastcol = column;
 			}
 		//}
-		//else
-		//	lastdown = false;
+		else
+			lastdown = false;
 	}
 
 	void Line(float x0, float y0, float x1, float y1)
