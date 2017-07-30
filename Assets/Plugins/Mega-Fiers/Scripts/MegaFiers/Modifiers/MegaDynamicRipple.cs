@@ -521,7 +521,7 @@ public class MegaDynamicRipple : MegaModifier
 
 	void checkInput()
 	{
-        
+        /*
 		//if ( Input.GetMouseButton(0) )
         if (activeInput)
 		{
@@ -604,10 +604,12 @@ public class MegaDynamicRipple : MegaModifier
 		}
 		else
 			lastdown = false;
+            */
 	}
 
 	void checkInput1()
 	{
+    /*
      //   GameObject targetObject = GameObject.Find("HololensCamera");
 
        // Vector3 forward = transform.TransformDirection(Vector3.forward) * 10;
@@ -636,6 +638,7 @@ public class MegaDynamicRipple : MegaModifier
 		//}
 		else
 			lastdown = false;
+            */
 	}
 
 	void Line(float x0, float y0, float x1, float y1)
