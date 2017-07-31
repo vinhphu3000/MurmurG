@@ -84,8 +84,8 @@ Material:
     - _SrcBlend: 1
     - _UVSec: 0
     - _Value1: 95.1
-    - _Value2: 2
-    - _Value3: 0.5
+    - _Value2: 1
+    - _Value3: 0.2
     - _ZTest: 4
     - _ZWrite: 1
     m_Colors:
