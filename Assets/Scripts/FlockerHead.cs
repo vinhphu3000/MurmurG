@@ -127,11 +127,11 @@ public class FlockerHead : MonoBehaviour
                     
                     if(manager == "BirdManager")
                     {
-                        if (Random.Range(0, 2) < 1) ApplyRules();
+                        if (Random.Range(0, 7) < 1) ApplyRules();
                     }
                     else
                     {
-                        if (Random.Range(0, 10) < 1) ApplyRules();
+                        if (Random.Range(0, 7) < 1) ApplyRules();
                     }
                  //   Debug.Log("state is patrol");
                 }
@@ -140,7 +140,7 @@ public class FlockerHead : MonoBehaviour
             case FlockState.PURSUE:
                 {
                     if (manager == "BirdManager") {
-                        if (Random.Range(0, 2) < 1) ApplyRules();
+                        if (Random.Range(0, 7) < 1) ApplyRules();
                     }
                     else {
                       if (Random.Range(0, 4) < 1) ApplyRules();
@@ -154,7 +154,7 @@ public class FlockerHead : MonoBehaviour
                     
                     if (manager == "BirdManager")
                     {
-                        if (Random.Range(0, 2) < 1) ApplyRules();
+                        if (Random.Range(0, 10) < 1) ApplyRules();
                     }
                     else
                     {

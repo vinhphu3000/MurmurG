@@ -29,6 +29,7 @@ ModelImporter:
     4300000: Cube
     4300002: Plane
     4300004: Cube.001
+    4300006: Plane.002
     10800000: Lamp
   materials:
     importMaterials: 1
