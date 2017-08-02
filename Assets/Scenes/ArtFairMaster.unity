@@ -4271,7 +4271,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 85183168724214341ac7f1e249a2cc09, type: 3}
+  m_audioClip: {fileID: 8300000, guid: b1ed30c39bcb74644a4dd456042a5ef3, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -57001,7 +57001,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 1f78198678d0eb94ea558f8b397e05fe, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 63e6da8fe7dc8ad4daba1430b64e5775, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -63189,7 +63189,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   surface: {fileID: 798953268}
-  force: 0.25
+  force: 0.2
 --- !u!1 &1828031824
 GameObject:
   m_ObjectHideFlags: 0
@@ -64189,7 +64189,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400008, guid: fcb8cf6cb1c413445bb9024bffe6466f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4
+      value: 3.916
       objectReference: {fileID: 0}
     - target: {fileID: 400008, guid: fcb8cf6cb1c413445bb9024bffe6466f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -64231,6 +64231,14 @@ Prefab:
       propertyPath: m_LocalScale.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2300006, guid: fcb8cf6cb1c413445bb9024bffe6466f, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 626a78bb80d04d04292eac7a5e2dbff4, type: 2}
+    - target: {fileID: 2300006, guid: fcb8cf6cb1c413445bb9024bffe6466f, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7c78f21be9389474483c0e1e1137312e, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fcb8cf6cb1c413445bb9024bffe6466f, type: 3}
   m_IsPrefabParent: 0
