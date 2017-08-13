@@ -130,7 +130,6 @@ namespace HoloToolkit.Unity.InputModule
                 if (AllowMeshVisualizationControl)
                 {
                     SpatialMappingManager.Instance.DrawVisualMeshes = true;
-                    gameObject.GetComponent<MeshRenderer>().enabled = true;
                 }
 #if UNITY_WSA && !UNITY_EDITOR
 
@@ -149,7 +148,6 @@ namespace HoloToolkit.Unity.InputModule
                 if (AllowMeshVisualizationControl)
                 {
                     SpatialMappingManager.Instance.DrawVisualMeshes = false;
-                    gameObject.GetComponent<MeshRenderer>().enabled = false;
                 }
 #if UNITY_WSA && !UNITY_EDITOR
 
