@@ -78,7 +78,7 @@ EditorBuildSettings:
     path: Assets/HoloToolkit-Examples/Prototyping/Scenes/CycleArray.unity
     guid: 842aaaa8d5f4e0a44bf6b487f95b2f15
   - enabled: 0
-    path: Assets/HoloToolkit-Examples/Prototyping/Scenes/PlanelLayout.unity
+    path: Assets/HoloToolkit-Examples/Prototyping/Scenes/PanelLayout.unity
     guid: 1ad7ea4cb1f510f42959e6c3a96fcd16
   - enabled: 0
     path: Assets/HoloToolkit-Examples/Prototyping/Scenes/PositionAnObject.unity
