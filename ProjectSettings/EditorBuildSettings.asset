@@ -95,6 +95,9 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/MurmurArtFair.unity
     guid: 62d7e8c366f432d46a02b37c79eaf179
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/ArtFairMaster.unity
     guid: 87a2767dcd9496442aa844fd3c3da46a
+  - enabled: 1
+    path: Assets/Scenes/AnchorageMaster.unity
+    guid: 2e7d8c5db5c25bc4f9f8f74f1a537ec8
