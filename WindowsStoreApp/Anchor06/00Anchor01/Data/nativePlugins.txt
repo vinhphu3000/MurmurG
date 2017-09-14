@@ -1,0 +1,7 @@
+MicStreamSelector.dll
+AudioPluginNoiseGenerators_x64.dll
+SharingClient.dll
+SpatialUnderstanding.dll
+PlaneFinding.dll
+AudioPluginMsHRTF.dll
+AudioPluginNoiseGenerators_x86.dll
