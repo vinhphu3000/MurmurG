@@ -22,19 +22,16 @@ namespace HoloToolkit.Unity.InputModule
     /// </summary>
     public partial class SpeechInputSource : BaseInputSource
     {
-        [Serializable]
-        public struct KeywordAndKeyCode
-        {
-            [Tooltip("The keyword to recognize.")]
-            public string Keyword;
-            [Tooltip("The KeyCode to recognize.")]
-            public KeyCode KeyCode;
-        }
+        /// <summary>
+        /// Keywords are persistent across all scenes.  This Speech Input Source instance will not be destroyed when loading a new scene.
+        /// </summary>
+        [Tooltip("Keywords are persistent across all scenes.  This Speech Input Source instance will not be destroyed when loading a new scene.")]
+        public bool PersistentKeywords;
 
         // This enumeration gives the manager two different ways to handle the recognizer. Both will
         // set up the recognizer and add all keywords. The first causes the recognizer to start
         // immediately. The second allows the recognizer to be manually started at a later time.
-        public enum RecognizerStartBehavior { AutoStart, ManualStart };
+        public enum RecognizerStartBehavior { AutoStart, ManualStart }
 
         [Tooltip("Whether the recognizer should be activated on start.")]
         public RecognizerStartBehavior RecognizerStart;
@@ -43,24 +40,33 @@ namespace HoloToolkit.Unity.InputModule
         public KeywordAndKeyCode[] Keywords;
 
 #if UNITY_WSA || UNITY_STANDALONE_WIN
+        [Tooltip("The confidence level for the keyword recognizer.")]
+        //The serialized data of this field will be lost when switching between platforms and re-serializing this class.
+        [SerializeField]
+        private ConfidenceLevel recognitionConfidenceLevel = ConfidenceLevel.Medium;
+
         private KeywordRecognizer keywordRecognizer;
 
+        #region Unity Methods
 
-        protected override void Start()
+        protected virtual void Start()
         {
-            base.Start();
+            if (PersistentKeywords)
+            {
+                DontDestroyOnLoad(gameObject);
+            }
 
             int keywordCount = Keywords.Length;
             if (keywordCount > 0)
             {
-                string[] keywords = new string[keywordCount];
+                var keywords = new string[keywordCount];
 
                 for (int index = 0; index < keywordCount; index++)
                 {
                     keywords[index] = Keywords[index].Keyword;
                 }
 
-                keywordRecognizer = new KeywordRecognizer(keywords);
+                keywordRecognizer = new KeywordRecognizer(keywords, recognitionConfidenceLevel);
                 keywordRecognizer.OnPhraseRecognized += KeywordRecognizer_OnPhraseRecognized;
 
                 if (RecognizerStart == RecognizerStartBehavior.AutoStart)
@@ -108,21 +114,16 @@ namespace HoloToolkit.Unity.InputModule
             }
         }
 
-        private void ProcessKeyBindings()
-        {
-            for (int index = Keywords.Length; --index >= 0;)
-            {
-                if (Input.GetKeyDown(Keywords[index].KeyCode))
-                {
-                    OnPhraseRecognized(ConfidenceLevel.High, TimeSpan.Zero, DateTime.Now, null, Keywords[index].Keyword);
-                }
-            }
-        }
+        #endregion // Unity Methods
+
+        #region Event Callbacks
 
         private void KeywordRecognizer_OnPhraseRecognized(PhraseRecognizedEventArgs args)
         {
             OnPhraseRecognized(args.confidence, args.phraseDuration, args.phraseStartTime, args.semanticMeanings, args.text);
         }
+
+        #endregion // Event Callbacks
 
         /// <summary>
         /// Make sure the keyword recognizer is off, then start it.
@@ -133,6 +134,17 @@ namespace HoloToolkit.Unity.InputModule
             if (keywordRecognizer != null && !keywordRecognizer.IsRunning)
             {
                 keywordRecognizer.Start();
+            }
+        }
+
+        private void ProcessKeyBindings()
+        {
+            for (int index = Keywords.Length; --index >= 0;)
+            {
+                if (Input.GetKeyDown(Keywords[index].KeyCode))
+                {
+                    OnPhraseRecognized(recognitionConfidenceLevel, TimeSpan.Zero, DateTime.Now, null, Keywords[index].Keyword);
+                }
             }
         }
 
@@ -154,6 +166,8 @@ namespace HoloToolkit.Unity.InputModule
         }
 #endif
 
+        #region Base Input Source Methods
+
         public override bool TryGetPosition(uint sourceId, out Vector3 position)
         {
             position = Vector3.zero;
@@ -170,5 +184,7 @@ namespace HoloToolkit.Unity.InputModule
         {
             return SupportedInputInfo.None;
         }
+
+        #endregion // Base Input Source Methods
     }
 }
