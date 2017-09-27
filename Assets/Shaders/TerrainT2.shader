@@ -1,17 +1,11 @@
 ﻿Shader "Custom/TerrainT2" {
 	Properties{
 		[HideInInspector] _Control("Control (RGBA)", 2D) = "red" {}
-	[HideInInspector] _Splat6("Layer 6 (A)", 2D) = "white" {}
-	[HideInInspector] _Splat5("Layer 5 (B)", 2D) = "white" {}
-	[HideInInspector] _Splat4("Layer 4 (G)", 2D) = "white" {}
-	[HideInInspector] _Splat3("Layer 3 (R)", 2D) = "white" {}
+	[HideInInspector] _Splat3("Layer 3 (A)", 2D) = "white" {}
 	[HideInInspector] _Splat2("Layer 2 (B)", 2D) = "white" {}
 	[HideInInspector] _Splat1("Layer 1 (G)", 2D) = "white" {}
 	[HideInInspector] _Splat0("Layer 0 (R)", 2D) = "white" {}
-	[HideInInspector] _Normal6("Normal 6 (A)", 2D) = "bump" {}
-	[HideInInspector] _Normal5("Normal 5 (B)", 2D) = "bump" {}
-	[HideInInspector] _Normal4("Normal 4 (G)", 2D) = "bump" {}
-	[HideInInspector] _Normal3("Normal 3 (R)", 2D) = "bump" {}
+	[HideInInspector] _Normal3("Normal 3 (A)", 2D) = "bump" {}
 	[HideInInspector] _Normal2("Normal 2 (B)", 2D) = "bump" {}
 	[HideInInspector] _Normal1("Normal 1 (G)", 2D) = "bump" {}
 	[HideInInspector] _Normal0("Normal 0 (R)", 2D) = "bump" {}
