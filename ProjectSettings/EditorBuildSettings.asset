@@ -101,6 +101,9 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/AnchorageMaster.unity
     guid: 2e7d8c5db5c25bc4f9f8f74f1a537ec8
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/MysticMaster.unity
     guid: cf91589b2ae1d254c96bd7f89bafe780
+  - enabled: 1
+    path: Assets/Scenes/MysticDemo.unity
+    guid: baec88b17ceff9f4bbeb549e990d5009
