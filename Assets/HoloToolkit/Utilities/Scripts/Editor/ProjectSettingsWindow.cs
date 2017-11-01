@@ -11,7 +11,7 @@ using UnityEngine.Networking;
 namespace HoloToolkit.Unity
 {
     /// <summary>
-    /// Renders the UI and handles update logic for HoloToolkit/Configure/Apply HoloLens Project Settings.
+    /// Renders the UI and handles update logic for HoloToolkit/Configure/Apply Mixed Reality Project Settings.
     /// </summary>
     public class ProjectSettingsWindow : AutoConfigureWindow<ProjectSettingsWindow.ProjectSetting>
     {
@@ -102,8 +102,11 @@ namespace HoloToolkit.Unity
                 {
                     using (var webRequest = UnityWebRequest.Get(SharingServiceURL))
                     {
+#if UNITY_2017_2_OR_NEWER
+                        webRequest.SendWebRequest();
+#else
                         webRequest.Send();
-
+#endif
                         while (!webRequest.isDone)
                         {
                             if (webRequest.downloadProgress != -1)
@@ -162,7 +165,11 @@ namespace HoloToolkit.Unity
                 {
                     using (var webRequest = UnityWebRequest.Get(InputManagerAssetURL))
                     {
+#if UNITY_2017_2_OR_NEWER
+                        webRequest.SendWebRequest();
+#else
                         webRequest.Send();
+#endif
 
                         while (!webRequest.isDone)
                         {
@@ -227,6 +234,7 @@ namespace HoloToolkit.Unity
                 EditorUserBuildSettings.wsaSubtarget = WSASubtarget.AnyDevice;
                 UnityEditorInternal.VR.VREditor.SetVREnabledDevicesOnTargetGroup(BuildTargetGroup.WSA, new[] { "None" });
                 PlayerSettings.WSA.SetCapability(PlayerSettings.WSACapability.HumanInterfaceDevice, false);
+                BuildDeployPrefs.BuildPlatform = "Any CPU";
             }
             else
             {
@@ -236,8 +244,13 @@ namespace HoloToolkit.Unity
                 if (!Values[ProjectSetting.TargetOccludedDevices])
                 {
                     EditorUserBuildSettings.wsaSubtarget = WSASubtarget.HoloLens;
+#if UNITY_2017_2_OR_NEWER
+                    UnityEditorInternal.VR.VREditor.SetVREnabledDevicesOnTargetGroup(BuildTargetGroup.WSA, new[] { "WindowsMR" });
+#else
                     UnityEditorInternal.VR.VREditor.SetVREnabledDevicesOnTargetGroup(BuildTargetGroup.WSA, new[] { "HoloLens" });
+#endif
                     PlayerSettings.WSA.SetCapability(PlayerSettings.WSACapability.HumanInterfaceDevice, Values[ProjectSetting.XboxControllerSupport]);
+                    BuildDeployPrefs.BuildPlatform = "x86";
 
                     for (var i = 0; i < QualitySettings.names.Length; i++)
                     {
@@ -247,8 +260,9 @@ namespace HoloToolkit.Unity
                 else
                 {
                     EditorUserBuildSettings.wsaSubtarget = WSASubtarget.PC;
-                    UnityEditorInternal.VR.VREditor.SetVREnabledDevicesOnTargetGroup(BuildTargetGroup.WSA, new[] { "stereo" });
+                    UnityEditorInternal.VR.VREditor.SetVREnabledDevicesOnTargetGroup(BuildTargetGroup.WSA, new[] { "WindowsMR" });
                     PlayerSettings.WSA.SetCapability(PlayerSettings.WSACapability.HumanInterfaceDevice, false);
+                    BuildDeployPrefs.BuildPlatform = "x64";
 
                     for (var i = 0; i < QualitySettings.names.Length; i++)
                     {

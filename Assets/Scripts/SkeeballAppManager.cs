@@ -2,12 +2,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using HoloToolkit.Unity;
-using HoloToolkit.Unity.SpatialMapping;
-using HoloToolkit.Unity.InputModule;
+//using HoloToolkit.Unity;
+//using HoloToolkit.Unity.SpatialMapping;
+//using HoloToolkit.Unity.InputModule;
 
-public class SkeeballAppManager : Singleton<SkeeballAppManager>, IInputClickHandler, ISpeechHandler
+public class SkeeballAppManager// : Singleton<SkeeballAppManager>, IInputClickHandler, ISpeechHandler
 {
+    /*
     public GameObject soundLayer1;
     public GameObject soundLayer2;
     public GameObject soundLayer3;
@@ -118,4 +119,5 @@ public class SkeeballAppManager : Singleton<SkeeballAppManager>, IInputClickHand
         }
 
     }
+    */
 }

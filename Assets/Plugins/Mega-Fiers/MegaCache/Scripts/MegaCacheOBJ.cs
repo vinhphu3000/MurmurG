@@ -98,7 +98,7 @@ public class MegaCacheOBJ : MonoBehaviour
 	{
 		mf = GetComponent<MeshFilter>();
 
-		if ( !Application.isEditor && !Application.isWebPlayer )
+	/*	if ( !Application.isEditor && !Application.isWebPlayer )
 		{
 			if ( datasource == MegaCacheData.File )
 			{
@@ -113,7 +113,7 @@ public class MegaCacheOBJ : MonoBehaviour
 					OpenCache(fullpath);	//cachefile);
 				}
 			}
-		}
+		}*/
 	}
 
 	public void ChangeSource(MegaCacheData src)

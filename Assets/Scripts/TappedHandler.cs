@@ -2,7 +2,7 @@
 using HoloToolkit.Sharing.Spawning;
 using HoloToolkit.Unity.InputModule;
 using UnityEngine;
-using UnityEngine.VR.WSA.Input;
+
 
 public class TappedHandler : MonoBehaviour
 {
@@ -10,11 +10,11 @@ public class TappedHandler : MonoBehaviour
 
     void Start()
     {
-        this.recognizer = new GestureRecognizer();
+        this.recognizer = new UnityEngine.XR.WSA.Input.GestureRecognizer();
         this.recognizer.TappedEvent += OnTapped;
         this.recognizer.StartCapturingGestures();
     }
-    void OnTapped(InteractionSourceKind source, int tapCount, Ray headRay)
+    void OnTapped(UnityEngine.XR.WSA.Input.InteractionSourceKind source, int tapCount, Ray headRay)
     {
         // If we're networking...
         if (SharingStage.Instance.IsConnected)
@@ -39,5 +39,5 @@ public class TappedHandler : MonoBehaviour
               false);
         }
     }
-    GestureRecognizer recognizer;
+    UnityEngine.XR.WSA.Input.GestureRecognizer recognizer;
 }
