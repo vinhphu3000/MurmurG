@@ -12,7 +12,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: Hot Bit Soup LLC
-  productName: 00MDS
+  productName: 01Mountain
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -581,10 +581,10 @@ PlayerSettings:
   webGLUseWasm: 0
   webGLCompressionFormat: 1
   scriptingDefineSymbols:
-    1: CROSS_PLATFORM_INPUT
+    1: CROSS_PLATFORM_INPUT;__MICROSPLAT__
     4: CROSS_PLATFORM_INPUT;MOBILE_INPUT
     7: CROSS_PLATFORM_INPUT;MOBILE_INPUT
-    14: MOBILE_INPUT
+    14: MOBILE_INPUT;__MICROSPLAT__
     17: MOBILE_INPUT
     20: MOBILE_INPUT
     22: MOBILE_INPUT
@@ -599,14 +599,14 @@ PlayerSettings:
   apiCompatibilityLevelPerPlatform: {}
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
-  metroPackageName: 00MDS
+  metroPackageName: 01Mountain
   metroPackageVersion: 1.0.0.0
   metroCertificatePath: Assets\WSATestCertificate.pfx
   metroCertificatePassword: 
   metroCertificateSubject: DefaultCompany
   metroCertificateIssuer: DefaultCompany
   metroCertificateNotAfter: 0065719f56c7d301
-  metroApplicationDescription: HoloToolkit-Unity
+  metroApplicationDescription: 00Mountain
   wsaImages: {}
   metroTileShortName: HoloToolkit-Unity
   metroCommandLineArgsFile: 

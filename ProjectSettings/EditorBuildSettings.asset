@@ -24,49 +24,49 @@ EditorBuildSettings:
     path: Assets/Scenes/Flocks.unity
     guid: cce42f9ca25decb469c22a1985e280a8
   - enabled: 0
-    path: Assets/HoloToolkit-Tests/Sharing/Scenes/RoomAndAnchorTest.unity
+    path: Assets/HoloToolkit-Examples/Sharing/SharingService/Scenes/RoomAndAnchorTest.unity
     guid: ce35045e930c3b442881305966b17fee
   - enabled: 0
-    path: Assets/HoloToolkit-Tests/Sharing/Scenes/SharingSpawnTest.unity
+    path: Assets/HoloToolkit-Examples/Sharing/SharingService/Scenes/SharingSpawnTest.unity
     guid: ce1ce2e2fae76fe41a127041a7fd6df3
   - enabled: 0
-    path: Assets/HoloToolkit-Tests/Sharing/Scenes/SharingTest.unity
+    path: Assets/HoloToolkit-Examples/Sharing/SharingService/Scenes/SharingTest.unity
     guid: 569d545af7438ca47acc54671fc57d2e
   - enabled: 0
-    path: Assets/HoloToolkit-Tests/SpatialSound/Scenes/AudioOcclusionTest.unity
+    path: Assets/HoloToolkit-Examples/SpatialSound/Scenes/AudioOcclusionTest.unity
     guid: fff2b6720e5162b4e9c9165a9546b1be
   - enabled: 0
-    path: Assets/HoloToolkit-Tests/Utilities/Scenes/FixedAngularSize.unity
+    path: Assets/HoloToolkit-Examples/Utilities/Scenes/FixedAngularSize.unity
     guid: 532576065751fd544816d8d48c4d8858
   - enabled: 0
-    path: Assets/HoloToolkit-Tests/Utilities/Scenes/HeadsUpDirectionIndicator.unity
+    path: Assets/HoloToolkit-Examples/Utilities/Scenes/HeadsUpDirectionIndicator.unity
     guid: a4fd3432fbefac648a50128ecbe641e0
   - enabled: 0
-    path: Assets/HoloToolkit-Tests/Utilities/Scenes/SphereBasedTagalong.unity
+    path: Assets/HoloToolkit-Examples/Utilities/Scenes/SphereBasedTagalong.unity
     guid: 8e7f025d704adf541a8dff9c1a84ad78
   - enabled: 0
-    path: Assets/HoloToolkit-Tests/Utilities/Scenes/StabilizationPlaneSetting.unity
+    path: Assets/HoloToolkit-Examples/Utilities/Scenes/StabilizationPlaneSetting.unity
     guid: c4a49abe187d4d348a9e58fe3280d14f
   - enabled: 0
-    path: Assets/HoloToolkit-Tests/Utilities/Scenes/TextToSpeechManager.unity
+    path: Assets/HoloToolkit-Examples/Utilities/Scenes/TextToSpeechManager.unity
     guid: d2f7079824a6d4945a1af491818b8124
   - enabled: 0
-    path: Assets/HoloToolkit-Tests/Utilities/Scenes/WindowOcclusion.unity
+    path: Assets/HoloToolkit-Examples/Utilities/Scenes/WindowOcclusion.unity
     guid: 282ee4505d164d9409e99884c9446a50
   - enabled: 0
-    path: Assets/HoloToolkit-Tests/Input/Scenes/InputManagerTest.unity
+    path: Assets/HoloToolkit-Examples/Input/Scenes/InputManagerTest.unity
     guid: bbb7f726308ba4b4e8ef592af9332ab4
   - enabled: 0
-    path: Assets/HoloToolkit-Examples/InteractiveElements/Scenes/GestureInteractiveExample.unity
+    path: Assets/HoloToolkit-Examples/UX/Scenes/GestureInteractiveExample.unity
     guid: 129aec1ffadcd134791d142340881afb
   - enabled: 0
-    path: Assets/HoloToolkit-Examples/InteractiveElements/Scenes/InteractiveButtonComponents.unity
+    path: Assets/HoloToolkit-Examples/UX/Scenes/InteractiveButtonComponents.unity
     guid: b20ddbd2fc80f1e4eae9a3d9f6fffecb
   - enabled: 0
-    path: Assets/HoloToolkit-Examples/InteractiveElements/Scenes/InteractiveExample.unity
+    path: Assets/HoloToolkit-Examples/UX/Scenes/InteractiveExample.unity
     guid: 9800082610e23d749aa87947090ac967
   - enabled: 0
-    path: Assets/HoloToolkit-Examples/InteractiveElements/Scenes/SliderSamples.unity
+    path: Assets/HoloToolkit-Examples/UX/Scenes/SliderSamples.unity
     guid: 24e56719c50827c488962b4249d4a70d
   - enabled: 0
     path: Assets/HoloToolkit-Examples/Prototyping/Scenes/ClickThroughExample.unity
@@ -87,10 +87,10 @@ EditorBuildSettings:
     path: Assets/HoloToolkit-Examples/Prototyping/Scenes/ScaleObjectByDistance.unity
     guid: 356db9551bf75544a818c0f74406188e
   - enabled: 0
-    path: Assets/HoloToolkit-Examples/SavingSpatialMeshes/SaveSpatialMapping.unity
+    path: Assets/HoloToolkit-Examples/SpatialMapping/Scenes/SaveSpatialMapping.unity
     guid: 537fc086ebd88124ba24a90db8110d2f
   - enabled: 0
-    path: Assets/HoloToolkit-Examples/SavingSpatialMeshes/SaveSpatialUnderstanding.unity
+    path: Assets/HoloToolkit-Examples/SpatialUnderstanding/Scenes/SaveSpatialUnderstanding.unity
     guid: 8d26b343ca0a41443aeaaf0796b6703d
   - enabled: 0
     path: Assets/Scenes/MurmurArtFair.unity
@@ -101,9 +101,12 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/AnchorageMaster.unity
     guid: 2e7d8c5db5c25bc4f9f8f74f1a537ec8
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/MysticMaster.unity
     guid: cf91589b2ae1d254c96bd7f89bafe780
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/MysticDemo.unity
     guid: baec88b17ceff9f4bbeb549e990d5009
+  - enabled: 0
+    path: Assets/Plugins/MicroSplat/Core/Examples/Scene/Terrain.unity
+    guid: 4badc44b23c10411ca9abcb0fde982c7
