@@ -1,0 +1,8 @@
+PlaneFinding.dll
+MicStreamSelector.dll
+GpuTiming.dll
+AudioPluginNoiseGenerators_x64.dll
+SharingClient.dll
+SpatialUnderstanding.dll
+AudioPluginMsHRTF.dll
+AudioPluginNoiseGenerators_x86.dll
