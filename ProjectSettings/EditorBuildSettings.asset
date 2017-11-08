@@ -108,5 +108,5 @@ EditorBuildSettings:
     path: Assets/Scenes/MysticDemo.unity
     guid: baec88b17ceff9f4bbeb549e990d5009
   - enabled: 0
-    path: Assets/Plugins/MicroSplat/Core/Examples/Scene/Terrain.unity
-    guid: 4badc44b23c10411ca9abcb0fde982c7
+    path: 
+    guid: 00000000000000000000000000000000
